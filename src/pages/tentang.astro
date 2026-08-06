@@ -54,8 +54,8 @@ const teamMembers = [
   },
   {
     name: "Agung Cipto Nugroho",
-    role: "HumasIlmu Tanah",
-    major: "Informatika 23",
+    role: "Humas",
+    major: "Ilmu Tanah 23",
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
   },
@@ -89,14 +89,20 @@ const teamMembers = [
 >
   <Navbar />
 
-  <main class="container">
+  <main class="max-w-container mx-auto px-5">
     <!-- Hero About (Mockup 1) -->
-    <section class="about-hero-section">
-      <div class="about-hero-grid">
+    <section class="pt-12 pb-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 items-center">
         <!-- Left Content -->
         <div class="fade-in">
-          <h1 class="about-hero-title">About<br />Watukarung</h1>
-          <p class="about-hero-desc">
+          <!-- Eyebrow Badge -->
+          <div class="inline-flex items-center gap-1.5 bg-white border border-primary-light text-primary text-[11px] font-bold tracking-[0.05em] uppercase px-3 py-1.5 rounded-pill mb-5">
+            📍 Desa Watukarung, Pacitan
+          </div>
+          <h1 class="text-[48px] font-extrabold text-text-primary leading-tight mb-5">
+            About<br />Watukarung
+          </h1>
+          <p class="text-[15px] text-text-secondary leading-[1.7] mb-7">
             Nestled along the rugged coastline, Watukarung Village is a
             sanctuary where pristine nature meets vibrant local culture.
             Renowned for its world-class waves and untouched beaches, it offers
@@ -106,33 +112,42 @@ const teamMembers = [
             beauty. Experience the rhythm of the ocean and the warmth of a
             tropical escape.
           </p>
-          <a href="/" class="btn-cta-primary"> Explore Destinations → </a>
+          <a href="/"
+            class="bg-primary text-white text-[15px] font-bold px-7 py-3.5 rounded-button inline-flex items-center gap-2 no-underline transition-colors duration-150 hover:bg-primary-hover hover:text-white">
+            Explore Destinations →
+          </a>
         </div>
 
         <!-- Right Photo -->
-        <div class="about-image-wrapper fade-in">
+        <div class="fade-in relative rounded-image overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
           <img
             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80"
             alt="Watukarung Coastline, Pacitan"
+            class="w-full h-[380px] object-cover"
             loading="lazy"
           />
-          <div class="location-tag">📍 Watukarung Coastline, Pacitan</div>
+          <!-- Location Tag -->
+          <div class="absolute bottom-5 left-5 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-pill text-[12px] font-bold text-text-primary">
+            📍 Watukarung Coastline, Pacitan
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Center Divider Line -->
-    <div class="section-divider"></div>
+    <!-- Center Divider -->
+    <div class="w-20 h-1 bg-border rounded mx-auto my-14"></div>
 
     <!-- Team Section (Mockup 1) -->
-    <section class="team-section">
-      <h2 class="team-title fade-in">The Team Behind the Vision</h2>
-      <p class="team-subtitle fade-in">
+    <section class="text-center pb-16">
+      <h2 class="fade-in text-[32px] font-bold text-text-primary mb-2">
+        The Team Behind the Vision
+      </h2>
+      <p class="fade-in text-[15px] text-text-secondary max-w-[620px] mx-auto mb-12 leading-relaxed">
         Meet the KKN 10 team dedicated to bringing the beauty of Watukarung to
         the digital world, merging local insights with modern design.
       </p>
 
-      <div class="team-grid">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
         {
           teamMembers.map((member) => (
             <TeamCard
