@@ -100,25 +100,35 @@ const markersJSON = JSON.stringify(markers);
 const totalMarkers = markers.length;
 ---
 
-<div class="map-card fade-in">
+<div class="fade-in bg-surface rounded-card border border-border shadow-card overflow-hidden flex flex-col relative">
   <!-- Map Legend (category filter) -->
-  <div class="map-legend-strip">
-    <button class="map-legend-btn active" data-filter="all">Semua</button>
-    <button class="map-legend-btn" data-filter="destinasi">
-      <span class="legend-dot" style="background:#0891B2;"></span> Wisata
+  <div class="flex items-center gap-2 px-4 py-2.5 bg-[#F8FAF9] border-b border-border overflow-x-auto scrollbar-none flex-wrap">
+    <button
+      class="map-legend-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[12px] font-bold border-[1.5px] border-border bg-white text-text-secondary cursor-pointer whitespace-nowrap transition-all duration-150 hover:border-primary hover:text-primary map-btn-active-all active"
+      data-filter="all">Semua</button>
+    <button
+      class="map-legend-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[12px] font-bold border-[1.5px] border-border bg-white text-text-secondary cursor-pointer whitespace-nowrap transition-all duration-150"
+      data-filter="destinasi">
+      <span class="w-2 h-2 rounded-full inline-block flex-shrink-0" style="background:#0891B2;"></span> Wisata
     </button>
-    <button class="map-legend-btn" data-filter="kuliner">
-      <span class="legend-dot" style="background:#16A34A;"></span> Kuliner
+    <button
+      class="map-legend-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[12px] font-bold border-[1.5px] border-border bg-white text-text-secondary cursor-pointer whitespace-nowrap transition-all duration-150"
+      data-filter="kuliner">
+      <span class="w-2 h-2 rounded-full inline-block flex-shrink-0" style="background:#16A34A;"></span> Kuliner
     </button>
-    <button class="map-legend-btn" data-filter="akomodasi">
-      <span class="legend-dot" style="background:#7C3AED;"></span> Akomodasi
+    <button
+      class="map-legend-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[12px] font-bold border-[1.5px] border-border bg-white text-text-secondary cursor-pointer whitespace-nowrap transition-all duration-150"
+      data-filter="akomodasi">
+      <span class="w-2 h-2 rounded-full inline-block flex-shrink-0" style="background:#7C3AED;"></span> Akomodasi
     </button>
-    <button class="map-legend-btn" data-filter="penunjang">
-      <span class="legend-dot" style="background:#DC2626;"></span> Penunjang
+    <button
+      class="map-legend-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[12px] font-bold border-[1.5px] border-border bg-white text-text-secondary cursor-pointer whitespace-nowrap transition-all duration-150"
+      data-filter="penunjang">
+      <span class="w-2 h-2 rounded-full inline-block flex-shrink-0" style="background:#DC2626;"></span> Penunjang
     </button>
   </div>
 
-  <div id="watukarung-map" class="map-container"></div>
+  <div id="watukarung-map" class="w-full" style="height: 340px; border: none;"></div>
 </div>
 
 <!-- Leaflet CSS -->
@@ -146,13 +156,13 @@ const totalMarkers = markers.length;
       maxZoom: 19,
     }).addTo(map);
 
-    // Color & emoji per category — warna berbeda untuk setiap kategori
+    // Color & emoji per category
     const categoryColors = {
-      kuliner: "#16A34A", // hijau
-      akomodasi: "#7C3AED", // ungu
-      destinasi: "#0891B2", // biru teal (Wisata)
-      jasa: "#EA580C", // oranye (ikut filter destinasi/wisata)
-      penunjang: "#DC2626", // merah
+      kuliner: "#16A34A",
+      akomodasi: "#7C3AED",
+      destinasi: "#0891B2",
+      jasa: "#EA580C",
+      penunjang: "#DC2626",
     };
     const categoryEmoji = {
       kuliner: "🍽️",
@@ -201,22 +211,34 @@ const totalMarkers = markers.length;
     });
 
     // Category filter buttons
-    // Mapping filter -> categoryCode(s) yang ditampilkan
     const filterMap = {
       all: ["kuliner", "akomodasi", "destinasi", "jasa", "penunjang"],
-      destinasi: ["destinasi"], // Wisata = destinasi + jasa wisata
+      destinasi: ["destinasi"],
       kuliner: ["kuliner"],
       akomodasi: ["akomodasi"],
       penunjang: ["penunjang"],
     };
 
+    const activeClassMap = {
+      all: "map-btn-active-all",
+      destinasi: "map-btn-active-destinasi",
+      kuliner: "map-btn-active-kuliner",
+      akomodasi: "map-btn-active-akomodasi",
+      penunjang: "map-btn-active-penunjang",
+    };
+
     document.querySelectorAll(".map-legend-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        document
-          .querySelectorAll(".map-legend-btn")
-          .forEach((b) => b.classList.remove("active"));
+        // Remove all active classes
+        document.querySelectorAll(".map-legend-btn").forEach((b) => {
+          Object.values(activeClassMap).forEach(cls => b.classList.remove(cls));
+          b.classList.remove("active");
+        });
         btn.classList.add("active");
         const filter = btn.dataset.filter;
+        const activeClass = activeClassMap[filter];
+        if (activeClass) btn.classList.add(activeClass);
+
         const allowed = filterMap[filter] || [filter];
         leafletMarkers.forEach((m) => {
           if (allowed.includes(m._categoryCode)) {

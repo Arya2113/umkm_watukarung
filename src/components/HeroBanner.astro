@@ -14,8 +14,15 @@ const {
 } = Astro.props;
 ---
 
-<div class="hero-banner">
-  <img src={imageSrc} alt="Watukarung Coast" class="hero-banner-bg" />
-  <div class="hero-banner-overlay"></div>
-  <h1 class="hero-banner-title">{title}</h1>
+<div class="relative w-full h-[300px] md:h-[300px] overflow-hidden flex items-center justify-center" style="height: 300px;">
+  <!-- min-h for mobile -->
+  <img src={imageSrc} alt="Watukarung Coast"
+    class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0"
+    style="background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(14,79,76,0.65) 100%);">
+  </div>
+  <h1 class="relative z-10 text-5xl md:text-5xl font-extrabold text-white uppercase tracking-widest text-center px-4"
+    style="text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); font-size: clamp(2rem, 5vw, 3rem);">
+    {title}
+  </h1>
 </div>

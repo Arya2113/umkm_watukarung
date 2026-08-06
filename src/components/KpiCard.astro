@@ -12,12 +12,12 @@ interface Props {
 const { icon, label, value } = Astro.props;
 ---
 
-<div class="kpi-card fade-in">
-  <div class="kpi-icon-circle">
-    <i data-lucide={icon}></i>
+<div class="fade-in bg-surface rounded-card border border-border shadow-card p-5 flex items-center gap-4 transition-all duration-[250ms] hover:-translate-y-0.5 hover:shadow-hover">
+  <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0">
+    <i data-lucide={icon} class="w-[22px] h-[22px]"></i>
   </div>
-  <div class="kpi-info">
-    <span class="kpi-label">{label}</span>
-    <span class="kpi-value">{value}</span>
+  <div class="flex flex-col">
+    <span class="text-[12px] font-semibold text-text-secondary uppercase tracking-[0.03em]">{label}</span>
+    <span class="text-[28px] font-extrabold text-text-primary leading-none">{value}</span>
   </div>
 </div>

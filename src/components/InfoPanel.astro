@@ -4,35 +4,37 @@
  */
 ---
 
-<div class="info-column">
+<div class="flex flex-col gap-5">
   <!-- Today's Conditions -->
-  <div class="info-panel-card fade-in">
-    <div class="info-panel-title">Today's Conditions</div>
-    <div class="weather-widget">
-      <div class="weather-icon">☀️</div>
+  <div class="fade-in bg-surface rounded-card border border-border shadow-card p-5">
+    <div class="text-[18px] font-bold text-primary mb-3">Today's Conditions</div>
+    <div class="flex items-center gap-4 pb-3 border-b border-border">
+      <div class="text-[2rem] text-yellow-400">☀️</div>
       <div>
-        <div class="weather-temp">28°C</div>
-        <div class="weather-desc">Sunny, Light Breeze</div>
+        <div class="text-[26px] font-extrabold text-text-primary leading-none">28°C</div>
+        <div class="text-[12px] font-medium text-text-secondary">Sunny, Light Breeze</div>
       </div>
     </div>
   </div>
 
   <!-- Upcoming Events -->
-  <div class="info-panel-card fade-in">
-    <div class="info-panel-title">Upcoming Events</div>
-    <div class="event-list">
-      <div class="event-item">
-        <div class="event-icon-badge">🏄</div>
-        <div class="event-details">
-          <span class="event-name">Local Surf Comp</span>
-          <span class="event-time">Tomorrow, 08:00 AM</span>
+  <div class="fade-in bg-surface rounded-card border border-border shadow-card p-5">
+    <div class="text-[18px] font-bold text-primary mb-3">Upcoming Events</div>
+    <div class="flex flex-col gap-3 mt-3">
+      <!-- Event 1 -->
+      <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#EAF3EC] text-primary flex items-center justify-center text-sm flex-shrink-0">🏄</div>
+        <div class="flex flex-col">
+          <span class="text-[14px] font-bold text-text-primary leading-tight">Local Surf Comp</span>
+          <span class="text-[12px] text-text-secondary">Tomorrow, 08:00 AM</span>
         </div>
       </div>
-      <div class="event-item">
-        <div class="event-icon-badge">🐟</div>
-        <div class="event-details">
-          <span class="event-name">Seafood Festival</span>
-          <span class="event-time">Saturday, 18:00 PM</span>
+      <!-- Event 2 -->
+      <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#EAF3EC] text-primary flex items-center justify-center text-sm flex-shrink-0">🐟</div>
+        <div class="flex flex-col">
+          <span class="text-[14px] font-bold text-text-primary leading-tight">Seafood Festival</span>
+          <span class="text-[12px] text-text-secondary">Saturday, 18:00 PM</span>
         </div>
       </div>
     </div>
