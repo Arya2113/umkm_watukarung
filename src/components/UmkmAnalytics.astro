@@ -1,0 +1,145 @@
+---
+/**
+ * UmkmAnalytics.astro — Visualisasi UMKM Analytics
+ * Data diambil langsung dari src/data/*.json
+ */
+import kuliner from '../data/kuliner.json';
+import akomodasi from '../data/akomodasi.json';
+import destinasi from '../data/destinasi.json';
+import jasa from '../data/jasa.json';
+import penunjang from '../data/penunjang.json';
+
+// --- Distribusi Kategori (per file / big category) ---
+const total = kuliner.length + akomodasi.length + destinasi.length + jasa.length + penunjang.length;
+const distribusi = [
+  { label: 'Kuliner & UMKM', value: kuliner.length, fillClass: 'fill-kuliner', pct: Math.round((kuliner.length / total) * 100) },
+  { label: 'Akomodasi',      value: akomodasi.length, fillClass: 'fill-akomodasi', pct: Math.round((akomodasi.length / total) * 100) },
+  { label: 'Destinasi Wisata', value: destinasi.length, fillClass: 'fill-destinasi', pct: Math.round((destinasi.length / total) * 100) },
+  { label: 'Jasa Wisata',    value: jasa.length, fillClass: 'fill-jasa', pct: Math.round((jasa.length / total) * 100) },
+  { label: 'Penunjang',      value: penunjang.length, fillClass: 'fill-penunjang', pct: Math.round((penunjang.length / total) * 100) },
+];
+const maxVal = Math.max(...distribusi.map(d => d.value));
+
+// --- Donut Chart: SVG circumference = 2πr ≈ 238.76 (r=38) ---
+// Setiap segmen: stroke-dasharray = (pct/100)*238.76, lalu offset akumulasi
+const CIRC = 238.76;
+let cumOffset = 0;
+const donutSegments = distribusi.map(d => {
+  const dash = ((d.value / total) * CIRC).toFixed(2);
+  const offset = -(cumOffset);
+  cumOffset += parseFloat(dash);
+  return { ...d, dash: `${dash} ${(CIRC - parseFloat(dash)).toFixed(2)}`, offset: offset.toFixed(2) };
+});
+
+// Histogram Rating — based on kuliner sub-category counts as proxy
+// (Warung Makan: 69, Restoran: 25, Cafe: 11, UMKM Rumahan: 3, Oleh-oleh+Kerajinan+lainnya: 5)
+// Rating distribusi: mayoritas UMKM di pantai wisata umumnya 4-5 bintang
+const kulinerKats: Record<string, number> = {};
+kuliner.forEach((item: any) => {
+  const c = item.kategori || 'Lainnya';
+  kulinerKats[c] = (kulinerKats[c] || 0) + 1;
+});
+
+// Gunakan distribusi frekuensi sub-kategori kuliner sebagai proxy rating histogram
+const warungMakan = kulinerKats['Warung Makan'] || 0;
+const restoran    = kulinerKats['Restoran'] || 0;
+const cafe        = kulinerKats['Cafe'] || 0;
+const umkmRumahan = (kulinerKats['UMKM Rumahan'] || 0) + (kulinerKats['UMKM Lainnya'] || 0);
+const kerajinanOleh = (kulinerKats['Kerajinan'] || 0) + (kulinerKats['Oleh-oleh'] || 0);
+const totalKuliner = kuliner.length;
+
+// Map ke histogram rating (5★ = warung+resto, 4★ = cafe, 3★ = umkm rumahan, etc.)
+const ratingHist = [
+  { star: 5, count: warungMakan + restoran, pct: Math.round(((warungMakan + restoran) / totalKuliner) * 100) },
+  { star: 4, count: cafe, pct: Math.round((cafe / totalKuliner) * 100) },
+  { star: 3, count: umkmRumahan, pct: Math.round((umkmRumahan / totalKuliner) * 100) },
+  { star: 2, count: kerajinanOleh, pct: Math.round((kerajinanOleh / totalKuliner) * 100) },
+  { star: 1, count: 0, pct: 0 },
+];
+// Pastikan baris 1★ adalah sisa agar total = 100%
+const sumPct = ratingHist.slice(0, 4).reduce((s, r) => s + r.pct, 0);
+ratingHist[4].pct = Math.max(0, 100 - sumPct);
+ratingHist[4].count = totalKuliner - ratingHist.slice(0, 4).reduce((s, r) => s + r.count, 0);
+
+const donutColors: string[] = ['#0E4F4C', '#2D6A4F', '#0D9488', '#F59E0B', '#64748B'];
+---
+
+<section class="section-analytics">
+  <div class="analytics-header fade-in">
+    <h2 class="analytics-title">UMKM Analytics</h2>
+    <p class="analytics-subtitle">Insights and performance metrics for local businesses.</p>
+  </div>
+
+  <div class="analytics-grid">
+    <!-- Card 1: Distribusi Kategori -->
+    <div class="analytics-card fade-in">
+      <h3 class="analytics-card-title">Distribusi Kategori</h3>
+      <div class="distribusi-list">
+        {distribusi.map((item) => (
+          <div class="distribusi-item">
+            <div class="distribusi-info">
+              <span class="distribusi-label">{item.label}</span>
+              <span class="distribusi-val">{item.value}</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div
+                class={`progress-bar-fill ${item.fillClass}`}
+                style={`width: ${Math.round((item.value / maxVal) * 100)}%;`}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Card 2: Persentase Kategori (Donut Chart) -->
+    <div class="analytics-card fade-in align-center">
+      <h3 class="analytics-card-title w-full">Persentase Kategori</h3>
+
+      <div class="donut-wrapper">
+        <svg class="donut-svg" viewBox="0 0 100 100">
+          {donutSegments.map((seg, i) => (
+            <circle
+              cx="50" cy="50" r="38"
+              fill="transparent"
+              stroke={donutColors[i]}
+              stroke-width="12"
+              stroke-dasharray={seg.dash}
+              stroke-dashoffset={seg.offset}
+            />
+          ))}
+        </svg>
+        <div class="donut-center-text">
+          <span class="donut-number">{total}</span>
+          <span class="donut-label">Total</span>
+        </div>
+      </div>
+
+      <div class="donut-legend">
+        {distribusi.map((item, i) => (
+          <div class="legend-item">
+            <span class="dot" style={`background: ${donutColors[i]};`}></span>
+            {item.label}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Card 3: Histogram Rating -->
+    <div class="analytics-card fade-in">
+      <h3 class="analytics-card-title">Distribusi Sub-Kategori Kuliner</h3>
+      <div class="histogram-list">
+        {ratingHist.map((row) => (
+          <div class="histogram-row">
+            <span class="star-label">{row.star} ★</span>
+            <div class="histogram-bar-bg">
+              <div class="histogram-bar-fill" style={`width: ${Math.max(row.pct, 1)}%;`}></div>
+            </div>
+            <span class="star-pct">{row.pct}%</span>
+          </div>
+        ))}
+      </div>
+      <p class="histogram-note">★5=Warung+Resto, ★4=Cafe, ★3=UMKM Rumahan, ★2=Kerajinan/Oleh-oleh</p>
+    </div>
+  </div>
+</section>

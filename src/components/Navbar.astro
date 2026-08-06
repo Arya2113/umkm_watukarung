@@ -1,0 +1,83 @@
+---
+/**
+ * Navbar.astro — Navigation Bar
+ * Sesuai mockup referensi: Logo JELAJAH WATUKARUNG, menu Dashboard & About, serta tombol aksi kanan.
+ */
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <!-- Brand / Logo -->
+    <a href="/" class="navbar-brand"> JELAJAH WATUKARUNG </a>
+
+    <!-- Desktop Nav Links -->
+    <ul class="navbar-links">
+      <li>
+        <a href="/" class={currentPath === "/" ? "active" : ""}> Dashboard </a>
+      </li>
+      <li>
+        <a
+          href="/tentang"
+          class={currentPath === "/tentang" ||
+          currentPath.startsWith("/tentang")
+            ? "active"
+            : ""}
+        >
+          About
+        </a>
+      </li>
+    </ul>
+
+    <!-- Right Actions -->
+    <div class="navbar-actions">
+      <!-- Bell Notification -->
+      <button class="icon-btn relative-btn" aria-label="Notifikasi">
+        <i data-lucide="bell"></i>
+        <span class="notification-dot"></span>
+      </button>
+
+      <!-- User Profile Avatar -->
+      <button class="icon-btn icon-btn-profile" aria-label="Profil User">
+        <i data-lucide="user"></i>
+      </button>
+
+      <!-- Mobile menu toggle -->
+      <button class="mobile-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu" id="icon-menu-open"></i>
+        <i data-lucide="x" id="icon-menu-close" style="display:none;"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/" class={currentPath === "/" ? "active" : ""}>Dashboard</a>
+    <a
+      href="/tentang"
+      class={currentPath.startsWith("/tentang") ? "active" : ""}>About</a
+    >
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const openIcon = document.getElementById("icon-menu-open");
+  const closeIcon = document.getElementById("icon-menu-close");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("active");
+      if (openIcon) openIcon.style.display = isOpen ? "none" : "block";
+      if (closeIcon) closeIcon.style.display = isOpen ? "block" : "none";
+    });
+  }
+
+  const navbar = document.getElementById("navbar");
+  if (navbar) {
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 10);
+    });
+  }
+</script>

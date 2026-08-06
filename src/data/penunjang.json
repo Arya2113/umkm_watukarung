@@ -1,0 +1,122 @@
+[
+  {
+    "nama": "The Summer Hill Mart",
+    "jenis": "Minimarket",
+    "alamat": "Dusun ketro desa, RT.01/RW.06, Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
+    "jamOperasional": "7.00 am–9.00 pm",
+    "kontak": "6285290820341",
+    "pantaiTerdekat": "Pasir Putih Watukarung",
+    "linkGmaps": "https://maps.app.goo.gl/9JuTyk4Su9bZgMX68",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "Pom Mini Bensin Frizka/Faiz",
+    "jenis": "Pom Mini",
+    "alamat": "QX7G+C2W, Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
+    "jamOperasional": "",
+    "kontak": "6282143057545",
+    "pantaiTerdekat": "Pasir Putih Watukarung",
+    "linkGmaps": "https://maps.app.goo.gl/Zg8dHUYSFL4NLNx78",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "Pom Mini Bensin kali bendo",
+    "jenis": "Pom Mini",
+    "alamat": "Ketro, Watukarung, Pringkuku, Pacitan Regency, East Java 63552",
+    "jamOperasional": "5.00 - 18.00",
+    "kontak": "6282136589019",
+    "pantaiTerdekat": "Pasir Putih Watukarung",
+    "linkGmaps": "https://maps.app.goo.gl/SSUjFiAxdvbMNKCLA",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "Toko Putih",
+    "jenis": "Minimarket",
+    "alamat": "QX7H+G25, Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
+    "jamOperasional": "7.00 - 22.30",
+    "kontak": "",
+    "pantaiTerdekat": "Karung",
+    "linkGmaps": "https://maps.app.goo.gl/Yo59bc9XEL3QbaQ89",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "Toko Al-Faza",
+    "jenis": "Minimarket",
+    "alamat": "Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
+    "jamOperasional": "7.00 - 21.00\\",
+    "kontak": "",
+    "pantaiTerdekat": "",
+    "linkGmaps": "",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "Kios Wahyu Lestari",
+    "jenis": "Toko Kelontong",
+    "alamat": "Pantai Kasap, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
+    "jamOperasional": "",
+    "kontak": "",
+    "pantaiTerdekat": "",
+    "linkGmaps": "",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "Januari Mart",
+    "jenis": "Minimarket",
+    "alamat": "QX8C+6CQ, Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
+    "jamOperasional": "6.00 - 23.30",
+    "kontak": "6282257189720",
+    "pantaiTerdekat": "Bercak",
+    "linkGmaps": "https://maps.app.goo.gl/buRWbZRKdC3C39sg7",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "Masjid Dusun Gumulharjo",
+    "jenis": "Tempat Ibadah",
+    "alamat": "QX8C+3RX, Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
+    "jamOperasional": "24 Jam",
+    "kontak": "",
+    "pantaiTerdekat": "Pasir Putih Watukarung",
+    "linkGmaps": "https://maps.app.goo.gl/LhfrDsKPS9mCF5UV6",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "Risca Laudry",
+    "jenis": "Laundry",
+    "alamat": "",
+    "jamOperasional": "8.00 - 21.00",
+    "kontak": "6281232684154",
+    "pantaiTerdekat": "Pasir Putih Watukarung",
+    "linkGmaps": "",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "Tri Putra Motor",
+    "jenis": "Bengkel",
+    "alamat": "",
+    "jamOperasional": "9.00 - 2.00",
+    "kontak": "6282336471605",
+    "pantaiTerdekat": "Pasir Putih Watukarung",
+    "linkGmaps": "",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "Masjid Dusun Ketro",
+    "jenis": "Tempat Ibadah",
+    "alamat": "QX7F+MJQ, Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
+    "jamOperasional": "24 Jam",
+    "kontak": "",
+    "pantaiTerdekat": "Pasir Putih Watukarung",
+    "linkGmaps": "https://maps.app.goo.gl/31ZBwJirbPzKmFQa9",
+    "mediaSosial": ""
+  },
+  {
+    "nama": "N-Mart",
+    "jenis": "Minimarket",
+    "alamat": "",
+    "jamOperasional": "07.00-20.30",
+    "kontak": "",
+    "pantaiTerdekat": "Pasir Putih Watukarung",
+    "linkGmaps": "",
+    "mediaSosial": ""
+  }
+]

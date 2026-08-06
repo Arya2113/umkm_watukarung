@@ -1,0 +1,151 @@
+---
+/**
+ * tentang.astro — Halaman About JELAJAH Watukarung
+ * Sesuai Mockup 1: Hero 2-kolom dengan deskripsi & foto pantai, divider, serta 10 kartu tim KKN.
+ */
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import TeamCard from "../components/TeamCard.astro";
+
+// Data 10 anggota tim KKN 10 sesuai Mockup 1
+const teamMembers = [
+  {
+    name: "Rafi Akbar Nurrahman",
+    role: "Ketua",
+    major: "Manajemen 23",
+    image:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+  },
+  {
+    name: "Bilqies Syafina Wardati",
+    role: "Sekretaris",
+    major: "Statistika 23",
+    image:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+  },
+  {
+    name: "Rizky Rahmawati",
+    role: "Bendahara",
+    major: "Manajemen 23",
+    image:
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80",
+  },
+  {
+    name: "Fadiana Aulia R",
+    role: "Logistik",
+    major: "Statistika 23",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+  },
+  {
+    name: "Muhammad Arfan G.R",
+    role: "Logistik",
+    major: "Ilmu Teknologi Pangan 23",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80",
+  },
+  {
+    name: "Raditya Arya R",
+    role: "Humas",
+    major: "Informatika 23",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
+  },
+  {
+    name: "Agung Cipto Nugroho",
+    role: "HumasIlmu Tanah",
+    major: "Informatika 23",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+  },
+  {
+    name: "Ahmad Syafril F",
+    role: "PDD",
+    major: "Arsitek 23",
+    image:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+  },
+  {
+    name: "Tsalisa Hasna Kamila",
+    role: "PDD",
+    major: "Arsitek 23",
+    image:
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=300&q=80",
+  },
+  {
+    name: "Putri Nur Rizky",
+    role: "PDD",
+    major: "Seni Rupa 23",
+    image:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+  },
+];
+---
+
+<Layout
+  title="About Watukarung"
+  description="Mengenal Desa Watukarung dan Tim KKN 10 di balik website JELAJAH Watukarung."
+>
+  <Navbar />
+
+  <main class="container">
+    <!-- Hero About (Mockup 1) -->
+    <section class="about-hero-section">
+      <div class="about-hero-grid">
+        <!-- Left Content -->
+        <div class="fade-in">
+          <h1 class="about-hero-title">About<br />Watukarung</h1>
+          <p class="about-hero-desc">
+            Nestled along the rugged coastline, Watukarung Village is a
+            sanctuary where pristine nature meets vibrant local culture.
+            Renowned for its world-class waves and untouched beaches, it offers
+            a tranquil retreat for adventurers and peace-seekers alike. Our
+            digital initiative aims to highlight this coastal paradise,
+            fostering sustainable tourism while preserving its raw, organic
+            beauty. Experience the rhythm of the ocean and the warmth of a
+            tropical escape.
+          </p>
+          <a href="/" class="btn-cta-primary"> Explore Destinations → </a>
+        </div>
+
+        <!-- Right Photo -->
+        <div class="about-image-wrapper fade-in">
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80"
+            alt="Watukarung Coastline, Pacitan"
+            loading="lazy"
+          />
+          <div class="location-tag">📍 Watukarung Coastline, Pacitan</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Center Divider Line -->
+    <div class="section-divider"></div>
+
+    <!-- Team Section (Mockup 1) -->
+    <section class="team-section">
+      <h2 class="team-title fade-in">The Team Behind the Vision</h2>
+      <p class="team-subtitle fade-in">
+        Meet the KKN 10 team dedicated to bringing the beauty of Watukarung to
+        the digital world, merging local insights with modern design.
+      </p>
+
+      <div class="team-grid">
+        {
+          teamMembers.map((member) => (
+            <TeamCard
+              name={member.name}
+              role={member.role}
+              major={member.major}
+              imageSrc={member.image}
+            />
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

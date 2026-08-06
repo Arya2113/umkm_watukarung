@@ -1,0 +1,59 @@
+---
+/**
+ * Layout.astro — Kerangka halaman utama JELAJAH Watukarung
+ * Wrapper HTML dengan meta tags, Google Fonts (Plus Jakarta Sans), Lucide icons, dan global CSS.
+ */
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'JELAJAH Watukarung — Portal informasi wisata, akomodasi, kuliner, dan UMKM Desa Watukarung, Pacitan, Jawa Timur.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0E4F4C" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | JELAJAH Watukarung</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+  </head>
+  <body>
+    <slot />
+
+    <!-- Inisialisasi Lucide Icons & Scroll animations -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // @ts-ignore
+        if (window.lucide) window.lucide.createIcons();
+
+        // Intersection Observer untuk animasi fade-in
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          },
+          { threshold: 0.05 }
+        );
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

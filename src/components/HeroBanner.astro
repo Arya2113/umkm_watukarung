@@ -1,0 +1,21 @@
+---
+/**
+ * HeroBanner.astro — Dashboard Hero Banner
+ * Banner full-width dengan foto pantai Watukarung dan teks judul besar.
+ */
+interface Props {
+  title?: string;
+  imageSrc?: string;
+}
+
+const {
+  title = 'JELAJAH WATUKARUNG',
+  imageSrc = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80'
+} = Astro.props;
+---
+
+<div class="hero-banner">
+  <img src={imageSrc} alt="Watukarung Coast" class="hero-banner-bg" />
+  <div class="hero-banner-overlay"></div>
+  <h1 class="hero-banner-title">{title}</h1>
+</div>

@@ -1,0 +1,93 @@
+---
+/**
+ * ListingCard.astro — Kartu Listing Tempat / UMKM
+ * Layout horizontal sesuai Mockup 2: thumbnail di kiri, info di tengah, 2 tombol aksi di kanan.
+ */
+interface Props {
+  id: string;
+  nama: string;
+  kategori: string;
+  categoryCode: string;
+  alamat?: string;
+  kontak?: string;
+  linkGmaps?: string;
+  linkFoto?: string;
+  rating?: string;
+  reviewCount?: string;
+  rawItem: any;
+}
+
+const {
+  id,
+  nama,
+  kategori,
+  categoryCode,
+  alamat,
+  kontak,
+  linkGmaps,
+  linkFoto,
+  rating = '4.9',
+  reviewCount = '120+',
+  rawItem
+} = Astro.props;
+
+// Default category badge color & fallback icon
+const categoryIcons: Record<string, string> = {
+  destinasi: '🏖️',
+  akomodasi: '🏡',
+  kuliner: '🍽️',
+  jasa: '🏄',
+  penunjang: '🏪',
+};
+
+const defaultIcon = categoryIcons[categoryCode] || '📍';
+const cleanContact = kontak ? kontak.replace(/\D/g, '') : '';
+const waUrl = cleanContact ? `https://wa.me/${cleanContact}` : null;
+---
+
+<div
+  class="listing-card fade-in"
+  data-id={id}
+  data-category={categoryCode}
+  data-search={`${nama} ${kategori} ${alamat || ''}`.toLowerCase()}
+  data-raw={JSON.stringify(rawItem)}
+>
+  <!-- Thumbnail -->
+  {linkFoto ? (
+    <img src={linkFoto} alt={nama} class="listing-thumb" loading="lazy" />
+  ) : (
+    <div class="listing-thumb-fallback">
+      {defaultIcon}
+    </div>
+  )}
+
+  <!-- Content -->
+  <div class="listing-content">
+    <span class="category-badge">{kategori || categoryCode.toUpperCase()}</span>
+    <h3 class="listing-title">{nama}</h3>
+    <div class="listing-rating-row">
+      <span class="star-icon">★</span>
+      <span class="listing-rating-score">{rating}</span>
+      <span class="listing-rating-count">({reviewCount})</span>
+      {alamat && <span style="margin-left: 0.5rem; color: var(--color-text-muted);">• {alamat.substring(0, 40)}{alamat.length > 40 ? '...' : ''}</span>}
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="listing-actions" onclick="event.stopPropagation();">
+    {waUrl && (
+      <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+        <i data-lucide="message-square"></i> WhatsApp
+      </a>
+    )}
+    {linkGmaps ? (
+      <a href={linkGmaps} target="_blank" rel="noopener noreferrer" class="btn-maps">
+        <i data-lucide="map-pin"></i> Maps
+      </a>
+    ) : (
+      <a href={`https://maps.google.com/?q=${encodeURIComponent(nama + ' Watukarung Pacitan')}`} target="_blank" rel="noopener noreferrer" class="btn-maps">
+        <i data-lucide="map-pin"></i> Maps
+      </a>
+    )}
+  </div>
+</div>

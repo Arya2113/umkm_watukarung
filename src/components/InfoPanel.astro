@@ -1,0 +1,40 @@
+---
+/**
+ * InfoPanel.astro — Panel Informasi Kanan (Cuaca & Event)
+ */
+---
+
+<div class="info-column">
+  <!-- Today's Conditions -->
+  <div class="info-panel-card fade-in">
+    <div class="info-panel-title">Today's Conditions</div>
+    <div class="weather-widget">
+      <div class="weather-icon">☀️</div>
+      <div>
+        <div class="weather-temp">28°C</div>
+        <div class="weather-desc">Sunny, Light Breeze</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upcoming Events -->
+  <div class="info-panel-card fade-in">
+    <div class="info-panel-title">Upcoming Events</div>
+    <div class="event-list">
+      <div class="event-item">
+        <div class="event-icon-badge">🏄</div>
+        <div class="event-details">
+          <span class="event-name">Local Surf Comp</span>
+          <span class="event-time">Tomorrow, 08:00 AM</span>
+        </div>
+      </div>
+      <div class="event-item">
+        <div class="event-icon-badge">🐟</div>
+        <div class="event-details">
+          <span class="event-name">Seafood Festival</span>
+          <span class="event-time">Saturday, 18:00 PM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+---
+/**
+ * KpiCard.astro — Kartu Ringkasan Statistik KPI
+ * Menampilkan ikon dalam lingkaran teal, label, dan angka besar.
+ */
+interface Props {
+  icon: string;
+  label: string;
+  value: number | string;
+}
+
+const { icon, label, value } = Astro.props;
+---
+
+<div class="kpi-card fade-in">
+  <div class="kpi-icon-circle">
+    <i data-lucide={icon}></i>
+  </div>
+  <div class="kpi-info">
+    <span class="kpi-label">{label}</span>
+    <span class="kpi-value">{value}</span>
+  </div>
+</div>

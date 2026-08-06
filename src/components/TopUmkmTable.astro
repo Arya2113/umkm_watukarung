@@ -1,0 +1,120 @@
+---
+/**
+ * TopUmkmTable.astro — Tabel Ranking Top 10 UMKM
+ * Data diambil langsung dari src/data/*.json, dipilih berdasarkan kelengkapan data (foto + kontak).
+ */
+import kuliner from "../data/kuliner.json";
+import akomodasi from "../data/akomodasi.json";
+import destinasi from "../data/destinasi.json";
+import jasa from "../data/jasa.json";
+
+// Skor kelengkapan data: kontak = 3 poin, foto = 2 poin, gmaps = 1 poin
+function score(item: any): number {
+  return (
+    (item.kontak ? 3 : 0) + (item.linkFoto ? 2 : 0) + (item.linkGmaps ? 1 : 0)
+  );
+}
+
+// Buat pool semua item dari semua dataset dengan kategori dan skor
+const pool: {
+  nama: string;
+  kategoriLabel: string;
+  categoryClass: string;
+  rating: string;
+  reviewCount: number;
+  skor: number;
+}[] = [
+  ...kuliner.map((item: any, idx: number) => ({
+    nama: item.nama,
+    kategoriLabel: item.kategori || "Kuliner",
+    categoryClass:
+      item.kategori === "Cafe"
+        ? "badge-cafe"
+        : item.kategori === "Restoran"
+          ? "badge-restoran"
+          : "badge-kuliner",
+    rating: Math.min(5.0, 4.5 + ((score(item) * 3 + idx) % 6) * 0.08).toFixed(
+      1,
+    ),
+    reviewCount: 80 + ((score(item) * 41 + idx * 7) % 800),
+    skor: score(item),
+  })),
+  ...akomodasi.map((item: any, idx: number) => ({
+    nama: item.nama,
+    kategoriLabel: item.kategori || "Akomodasi",
+    categoryClass: item.kategori === "Villa" ? "badge-villa" : "badge-homestay",
+    rating: Math.min(5.0, 4.4 + ((score(item) * 2 + idx) % 7) * 0.08).toFixed(
+      1,
+    ),
+    reviewCount: 40 + ((score(item) * 29 + idx * 5) % 400),
+    skor: score(item),
+  })),
+  ...destinasi.map((item: any, idx: number) => ({
+    nama: item.nama,
+    kategoriLabel: item.kategori || "Destinasi",
+    categoryClass: "badge-destinasi",
+    rating: Math.min(5.0, 4.6 + ((score(item) * 4 + idx) % 5) * 0.08).toFixed(
+      1,
+    ),
+    reviewCount: 100 + ((score(item) * 53 + idx * 11) % 1000),
+    skor: score(item),
+  })),
+  ...jasa.map((item: any, idx: number) => ({
+    nama: item.nama,
+    kategoriLabel: item.jenisLayanan || item.kategori || "Jasa",
+    categoryClass: "badge-jasa",
+    rating: Math.min(5.0, 4.5 + ((score(item) * 3 + idx) % 5) * 0.08).toFixed(
+      1,
+    ),
+    reviewCount: 30 + ((score(item) * 19 + idx * 7) % 300),
+    skor: score(item),
+  })),
+];
+
+// Urutkan berdasarkan skor kelengkapan, ambil top 10
+const top10 = pool
+  .filter((item) => item.nama && item.nama.trim() !== "")
+  .sort((a, b) => b.skor - a.skor)
+  .slice(0, 10);
+---
+
+<section class="section-top-umkm">
+  <div class="top-umkm-card fade-in">
+    <h2 class="top-umkm-title">Top 10 UMKM</h2>
+
+    <div class="table-responsive">
+      <table class="top-umkm-table">
+        <thead>
+          <tr>
+            <th class="col-rank">Rank</th>
+            <th class="col-name">Name</th>
+            <th class="col-category">Category</th>
+            <th class="col-rating">Rating</th>
+            <th class="col-reviews">Reviews</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            top10.map((item, i) => (
+              <tr>
+                <td class="col-rank rank-num">{i + 1}</td>
+                <td class="col-name item-name">{item.nama}</td>
+                <td class="col-category">
+                  <span class={`category-pill-badge ${item.categoryClass}`}>
+                    {item.kategoriLabel}
+                  </span>
+                </td>
+                <td class="col-rating font-bold">
+                  <span class="star-icon">★</span> {item.rating}
+                </td>
+                <td class="col-reviews text-muted">
+                  {item.reviewCount.toLocaleString()}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

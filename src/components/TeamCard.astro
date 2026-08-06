@@ -1,0 +1,30 @@
+---
+/**
+ * TeamCard.astro — Kartu Anggota Tim KKN
+ * Desain: Avatar foto bulat besar, nama tebal, role berwarna teal, jurusan abu-abu.
+ */
+interface Props {
+  name: string;
+  role: string;
+  major?: string;
+  imageSrc?: string;
+}
+
+const {
+  name,
+  role,
+  major = 'Informatika',
+  imageSrc = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80'
+} = Astro.props;
+---
+
+<div class="team-card fade-in">
+  <div class="team-avatar-wrapper">
+    <img src={imageSrc} alt={name} class="team-avatar" loading="lazy" />
+  </div>
+  <div class="team-info">
+    <div class="team-name">{name}</div>
+    <div class="team-role">{role}</div>
+    <div class="team-major">{major}</div>
+  </div>
+</div>
