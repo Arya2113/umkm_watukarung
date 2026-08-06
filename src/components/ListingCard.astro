@@ -46,7 +46,7 @@ const waUrl = cleanContact ? `https://wa.me/${cleanContact}` : null;
 ---
 
 <div
-  class="listing-card fade-in"
+  class="listing-card fade-in bg-surface rounded-card border border-border shadow-card p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 transition-all duration-[250ms] cursor-pointer hover:-translate-y-0.5 hover:shadow-hover hover:border-primary-light"
   data-id={id}
   data-category={categoryCode}
   data-search={`${nama} ${kategori} ${alamat || ''}`.toLowerCase()}
@@ -54,39 +54,48 @@ const waUrl = cleanContact ? `https://wa.me/${cleanContact}` : null;
 >
   <!-- Thumbnail -->
   {linkFoto ? (
-    <img src={linkFoto} alt={nama} class="listing-thumb" loading="lazy" />
+    <img src={linkFoto} alt={nama}
+      class="w-full h-[160px] sm:w-[140px] sm:h-[100px] rounded-md object-cover flex-shrink-0 bg-bg-bottom"
+      loading="lazy" />
   ) : (
-    <div class="listing-thumb-fallback">
+    <div class="w-full h-[160px] sm:w-[140px] sm:h-[100px] rounded-md flex-shrink-0 flex items-center justify-center text-[2rem] text-primary"
+      style="background: linear-gradient(135deg, #CFE3DD 0%, #FCEEE0 100%);">
       {defaultIcon}
     </div>
   )}
 
   <!-- Content -->
-  <div class="listing-content">
-    <span class="category-badge">{kategori || categoryCode.toUpperCase()}</span>
-    <h3 class="listing-title">{nama}</h3>
-    <div class="listing-rating-row">
-      <span class="star-icon">★</span>
-      <span class="listing-rating-score">{rating}</span>
-      <span class="listing-rating-count">({reviewCount})</span>
-      {alamat && <span style="margin-left: 0.5rem; color: var(--color-text-muted);">• {alamat.substring(0, 40)}{alamat.length > 40 ? '...' : ''}</span>}
+  <div class="flex-1 flex flex-col gap-1.5">
+    <span class="self-start bg-primary-dark text-white text-[11px] font-bold tracking-[0.05em] uppercase px-2 py-0.5 rounded-[6px]">
+      {kategori || categoryCode.toUpperCase()}
+    </span>
+    <h3 class="text-[18px] font-bold text-text-primary leading-snug">{nama}</h3>
+    <div class="flex items-center gap-1.5 text-sm text-text-secondary flex-wrap">
+      <span class="text-star text-sm">★</span>
+      <span class="font-bold text-text-primary">{rating}</span>
+      <span class="text-text-muted">({reviewCount})</span>
+      {alamat && <span class="ml-2 text-text-muted">• {alamat.substring(0, 40)}{alamat.length > 40 ? '...' : ''}</span>}
     </div>
   </div>
 
   <!-- Actions -->
-  <div class="listing-actions" onclick="event.stopPropagation();">
+  <div class="flex flex-row sm:flex-col gap-2 w-full sm:w-auto sm:min-w-[140px] flex-shrink-0" onclick="event.stopPropagation();">
     {waUrl && (
-      <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
-        <i data-lucide="message-square"></i> WhatsApp
+      <a href={waUrl} target="_blank" rel="noopener noreferrer"
+        class="flex-1 sm:flex-none bg-accent-wa text-white text-[13px] font-bold px-4 py-2.5 rounded-button inline-flex items-center justify-center gap-1.5 no-underline transition-colors duration-150 hover:bg-accent-wa-hover hover:text-white">
+        <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp
       </a>
     )}
     {linkGmaps ? (
-      <a href={linkGmaps} target="_blank" rel="noopener noreferrer" class="btn-maps">
-        <i data-lucide="map-pin"></i> Maps
+      <a href={linkGmaps} target="_blank" rel="noopener noreferrer"
+        class="flex-1 sm:flex-none bg-primary text-white text-[13px] font-bold px-4 py-2.5 rounded-button inline-flex items-center justify-center gap-1.5 no-underline transition-colors duration-150 hover:bg-primary-hover hover:text-white">
+        <i data-lucide="map-pin" class="w-4 h-4"></i> Maps
       </a>
     ) : (
-      <a href={`https://maps.google.com/?q=${encodeURIComponent(nama + ' Watukarung Pacitan')}`} target="_blank" rel="noopener noreferrer" class="btn-maps">
-        <i data-lucide="map-pin"></i> Maps
+      <a href={`https://maps.google.com/?q=${encodeURIComponent(nama + ' Watukarung Pacitan')}`}
+        target="_blank" rel="noopener noreferrer"
+        class="flex-1 sm:flex-none bg-primary text-white text-[13px] font-bold px-4 py-2.5 rounded-button inline-flex items-center justify-center gap-1.5 no-underline transition-colors duration-150 hover:bg-primary-hover hover:text-white">
+        <i data-lucide="map-pin" class="w-4 h-4"></i> Maps
       </a>
     )}
   </div>
