@@ -41,6 +41,65 @@ const categoryIcons: Record<string, string> = {
 };
 
 const defaultIcon = categoryIcons[categoryCode] || '📍';
+// Helper validasi URL foto langsung (bukan link search Google)
+const isValidImage = (url?: string) => {
+  if (!url) return false;
+  if (url.includes('google.com/search')) return false;
+  return (
+    url.startsWith('data:image') ||
+    url.startsWith('http://') ||
+    url.startsWith('https://') ||
+    url.startsWith('/')
+  );
+};
+
+// Koleksi variatif foto HD Unsplash bernuansa Pacitan & Watukarung per kategori
+const categoryPhotoPools: Record<string, string[]> = {
+  destinasi: [
+    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80',
+  ],
+  akomodasi: [
+    'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=400&q=80',
+  ],
+  kuliner: [
+    'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80',
+  ],
+  jasa: [
+    'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1455729552865-3658a5d3a092?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80',
+  ],
+  penunjang: [
+    'https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=400&q=80',
+  ],
+};
+
+// Fungsi memilih foto unik bernuansa tropis berdasarkan nama tempat
+const getPoolImage = (nameStr: string, catCode: string) => {
+  const pool = categoryPhotoPools[catCode] || categoryPhotoPools.destinasi;
+  let hash = 0;
+  for (let i = 0; i < nameStr.length; i++) {
+    hash = nameStr.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return pool[Math.abs(hash) % pool.length];
+};
+
+const fallbackImg = getPoolImage(nama, categoryCode);
+const finalDisplayImg = isValidImage(linkFoto) ? linkFoto : fallbackImg;
 const cleanContact = kontak ? kontak.replace(/\D/g, '') : '';
 const waUrl = cleanContact ? `https://wa.me/${cleanContact}` : null;
 ---
@@ -53,16 +112,10 @@ const waUrl = cleanContact ? `https://wa.me/${cleanContact}` : null;
   data-raw={JSON.stringify(rawItem)}
 >
   <!-- Thumbnail -->
-  {linkFoto ? (
-    <img src={linkFoto} alt={nama}
-      class="w-full h-[160px] sm:w-[140px] sm:h-[100px] rounded-md object-cover flex-shrink-0 bg-bg-bottom"
-      loading="lazy" />
-  ) : (
-    <div class="w-full h-[160px] sm:w-[140px] sm:h-[100px] rounded-md flex-shrink-0 flex items-center justify-center text-[2rem] text-primary"
-      style="background: linear-gradient(135deg, #CFE3DD 0%, #FCEEE0 100%);">
-      {defaultIcon}
-    </div>
-  )}
+  <img src={finalDisplayImg} alt={nama}
+    class="w-full h-[160px] sm:w-[140px] sm:h-[100px] rounded-md object-cover flex-shrink-0 bg-bg-bottom border border-border-light"
+    loading="lazy"
+    onerror={`this.onerror=null; this.src='${fallbackImg}';`} />
 
   <!-- Content -->
   <div class="flex-1 flex flex-col gap-1.5">
