@@ -1,84 +1,103 @@
 ---
 /**
  * tentang.astro — Halaman About JELAJAH Watukarung
- * Sesuai Mockup 1: Hero 2-kolom dengan deskripsi & foto pantai, divider, serta 10 kartu tim KKN.
  */
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import TeamCard from "../components/TeamCard.astro";
 
-// Data 10 anggota tim KKN 10 sesuai Mockup 1
-const teamMembers = [
+// 1. Import foto tetap di sini karena Astro butuh path statis untuk optimasi
+import agungImg from "../assets/profile/agung.jpg";
+import arfanImg from "../assets/profile/arfan.jpg";
+import arilImg from "../assets/profile/aril.jpg";
+import aryakImg from "../assets/profile/aryak.jpg";
+import dianaImg from "../assets/profile/diana.jpg";
+import hanaImg from "../assets/profile/hana.jpg";
+import ikyImg from "../assets/profile/iky.jpg";
+import putriImg from "../assets/profile/putri.jpg";
+import rafiImg from "../assets/profile/rafi.jpg";
+import seiqlibImg from "../assets/profile/seiqlib.jpg";
+
+interface TeamMember {
+  name: string;
+  role: string;
+  major: string;
+  image: ImageMetadata;
+  imageClass?: string;
+}
+
+// Data 10 anggota tim KKN 10 dengan pengaturan posisi & zoom foto masing-masing (imageClass)
+const teamMembers: TeamMember[] = [
   {
     name: "Rafi Akbar Nurrahman",
     role: "Ketua",
-    major: "Manajemen 23",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+    major: "Manajemen",
+    image: rafiImg,
+    imageClass: "scale-[1.6] translate-y-[18px]",
   },
   {
     name: "Bilqies Syafina Wardati",
     role: "Sekretaris",
-    major: "Statistika 23",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+    major: "Statistika",
+    image: seiqlibImg,
+    imageClass: "scale-[1.6] translate-y-[12px]",
   },
   {
     name: "Rizky Rahmawati",
     role: "Bendahara",
-    major: "Manajemen 23",
-    image:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80",
+    major: "Manajemen",
+    image: ikyImg,
+    imageClass: "scale-[2.0] translate-y-[40px] translate-x-[-15px]",
   },
   {
     name: "Fadiana Aulia R",
     role: "Logistik",
-    major: "Statistika 23",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+    major: "Statistika",
+    image: dianaImg,
+    imageClass: "scale-[1.3] translate-y-[10px]",
   },
   {
     name: "Muhammad Arfan G.R",
     role: "Logistik",
-    major: "Ilmu Teknologi Pangan 23",
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80",
+    major: "Ilmu Teknologi Pangan",
+    image: arfanImg,
+    imageClass: "scale-[1.35] translate-x-[8px]",
   },
   {
     name: "Raditya Arya R",
     role: "Humas",
-    major: "Informatika 23",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
+    major: "Informatika",
+    image: aryakImg,
+    imageClass: "scale-[1.35] object-top",
   },
   {
     name: "Agung Cipto Nugroho",
     role: "Humas",
-    major: "Ilmu Tanah 23",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+    major: "Ilmu Tanah",
+    image: agungImg,
+    imageClass: "scale-[1.3] translate-y-[12px]",
   },
   {
     name: "Ahmad Syafril F",
     role: "PDD",
-    major: "Arsitek 23",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+    major: "Arsitek",
+    image: arilImg,
+    imageClass: "scale-[1.15] object-top",
   },
   {
     name: "Tsalisa Hasna Kamila",
     role: "PDD",
-    major: "Arsitek 23",
-    image:
-      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=300&q=80",
+    major: "Arsitek",
+    image: hanaImg,
+    imageClass: "scale-[1.35] object-top",
   },
   {
     name: "Putri Nur Rizky",
     role: "PDD",
-    major: "Seni Rupa 23",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+    major: "Seni Rupa",
+    image: putriImg,
+    imageClass: "scale-[1.55] translate-y-[20px] translate-x-[-5px]",
   },
 ];
 ---
@@ -90,16 +109,21 @@ const teamMembers = [
   <Navbar />
 
   <main class="max-w-container mx-auto px-5">
-    <!-- Hero About (Mockup 1) -->
+    <!-- Hero About -->
     <section class="pt-12 pb-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 items-center">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 items-center"
+      >
         <!-- Left Content -->
         <div class="fade-in">
-          <!-- Eyebrow Badge -->
-          <div class="inline-flex items-center gap-1.5 bg-white border border-primary-light text-primary text-[11px] font-bold tracking-[0.05em] uppercase px-3 py-1.5 rounded-pill mb-5">
+          <div
+            class="inline-flex items-center gap-1.5 bg-white border border-primary-light text-primary text-[11px] font-bold tracking-[0.05em] uppercase px-3 py-1.5 rounded-pill mb-5"
+          >
             📍 Desa Watukarung, Pacitan
           </div>
-          <h1 class="text-[48px] font-extrabold text-text-primary leading-tight mb-5">
+          <h1
+            class="text-[48px] font-extrabold text-text-primary leading-tight mb-5"
+          >
             About<br />Watukarung
           </h1>
           <p class="text-[15px] text-text-secondary leading-[1.7] mb-7">
@@ -112,22 +136,30 @@ const teamMembers = [
             beauty. Experience the rhythm of the ocean and the warmth of a
             tropical escape.
           </p>
-          <a href="/"
-            class="bg-primary text-white text-[15px] font-bold px-7 py-3.5 rounded-button inline-flex items-center gap-2 no-underline transition-colors duration-150 hover:bg-primary-hover hover:text-white">
+          <a
+            href="/"
+            class="bg-primary text-white text-[15px] font-bold px-7 py-3.5 rounded-button inline-flex items-center gap-2 no-underline transition-colors duration-150 hover:bg-primary-hover hover:text-white"
+          >
             Explore Destinations →
           </a>
         </div>
 
         <!-- Right Photo -->
-        <div class="fade-in relative rounded-image overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+        <div
+          class="fade-in relative rounded-image overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+        >
+          <!-- 3. PERBAIKAN PENTING DI SINI -->
           <img
             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80"
             alt="Watukarung Coastline, Pacitan"
-            class="w-full h-[380px] object-cover"
-            loading="lazy"
+            class="w-full h-[380px] object-cover bg-gray-200"
+            fetchpriority="high"
+            decoding="async"
           />
           <!-- Location Tag -->
-          <div class="absolute bottom-5 left-5 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-pill text-[12px] font-bold text-text-primary">
+          <div
+            class="absolute bottom-5 left-5 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-pill text-[12px] font-bold text-text-primary"
+          >
             📍 Watukarung Coastline, Pacitan
           </div>
         </div>
@@ -137,12 +169,14 @@ const teamMembers = [
     <!-- Center Divider -->
     <div class="w-20 h-1 bg-border rounded mx-auto my-14"></div>
 
-    <!-- Team Section (Mockup 1) -->
+    <!-- Team Section -->
     <section class="text-center pb-16">
       <h2 class="fade-in text-[32px] font-bold text-text-primary mb-2">
         The Team Behind the Vision
       </h2>
-      <p class="fade-in text-[15px] text-text-secondary max-w-[620px] mx-auto mb-12 leading-relaxed">
+      <p
+        class="fade-in text-[15px] text-text-secondary max-w-[620px] mx-auto mb-12 leading-relaxed"
+      >
         Meet the KKN 10 team dedicated to bringing the beauty of Watukarung to
         the digital world, merging local insights with modern design.
       </p>
@@ -155,6 +189,7 @@ const teamMembers = [
               role={member.role}
               major={member.major}
               imageSrc={member.image}
+              imageClass={member.imageClass}
             />
           ))
         }
