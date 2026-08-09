@@ -10,7 +10,25 @@ import destinasi from "../data/destinasi.json";
 import jasa from "../data/jasa.json";
 import penunjang from "../data/penunjang.json";
 
-// Parse koordinat dari linkGmaps
+// Parse koordinat dari field latitude/longitude atau linkGmaps
+function getItemCoords(item: any): { lat: number; lng: number } | null {
+  if (item.latitude && item.longitude) {
+    const lat = parseFloat(String(item.latitude).trim());
+    const lng = parseFloat(String(item.longitude).trim());
+    if (!isNaN(lat) && !isNaN(lng) && lat !== 0 && lng !== 0) {
+      return { lat, lng };
+    }
+  }
+  if (item.lat && item.lng) {
+    const lat = parseFloat(String(item.lat).trim());
+    const lng = parseFloat(String(item.lng).trim());
+    if (!isNaN(lat) && !isNaN(lng) && lat !== 0 && lng !== 0) {
+      return { lat, lng };
+    }
+  }
+  return extractCoords(item.linkGmaps);
+}
+
 function extractCoords(
   url: string | undefined,
 ): { lat: number; lng: number } | null {
@@ -36,7 +54,7 @@ const markers: {
 }[] = [];
 
 kuliner.forEach((item: any) => {
-  const coords = extractCoords(item.linkGmaps);
+  const coords = getItemCoords(item);
   if (coords)
     markers.push({
       ...coords,
@@ -48,7 +66,7 @@ kuliner.forEach((item: any) => {
     });
 });
 akomodasi.forEach((item: any) => {
-  const coords = extractCoords(item.linkGmaps);
+  const coords = getItemCoords(item);
   if (coords)
     markers.push({
       ...coords,
@@ -60,7 +78,7 @@ akomodasi.forEach((item: any) => {
     });
 });
 destinasi.forEach((item: any) => {
-  const coords = extractCoords(item.linkGmaps);
+  const coords = getItemCoords(item);
   if (coords)
     markers.push({
       ...coords,
@@ -72,7 +90,7 @@ destinasi.forEach((item: any) => {
     });
 });
 jasa.forEach((item: any) => {
-  const coords = extractCoords(item.linkGmaps);
+  const coords = getItemCoords(item);
   if (coords)
     markers.push({
       ...coords,
@@ -84,7 +102,7 @@ jasa.forEach((item: any) => {
     });
 });
 penunjang.forEach((item: any) => {
-  const coords = extractCoords(item.linkGmaps);
+  const coords = getItemCoords(item);
   if (coords)
     markers.push({
       ...coords,
@@ -100,35 +118,53 @@ const markersJSON = JSON.stringify(markers);
 const totalMarkers = markers.length;
 ---
 
-<div class="fade-in bg-surface rounded-card border border-border shadow-card overflow-hidden flex flex-col relative">
+<div
+  class="fade-in bg-surface rounded-card border border-border shadow-card overflow-hidden flex flex-col relative"
+>
   <!-- Map Legend (category filter) -->
-  <div class="flex items-center gap-2 px-4 py-2.5 bg-[#F8FAF9] border-b border-border overflow-x-auto scrollbar-none flex-wrap">
+  <div
+    class="flex items-center gap-2 px-4 py-2.5 bg-[#F8FAF9] border-b border-border overflow-x-auto scrollbar-none flex-wrap"
+  >
     <button
       class="map-legend-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[12px] font-bold border-[1.5px] border-border bg-white text-text-secondary cursor-pointer whitespace-nowrap transition-all duration-150 hover:border-primary hover:text-primary map-btn-active-all active"
-      data-filter="all">Semua</button>
+      data-filter="all">Semua</button
+    >
     <button
       class="map-legend-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[12px] font-bold border-[1.5px] border-border bg-white text-text-secondary cursor-pointer whitespace-nowrap transition-all duration-150"
-      data-filter="destinasi">
-      <span class="w-2 h-2 rounded-full inline-block flex-shrink-0" style="background:#0891B2;"></span> Wisata
+      data-filter="destinasi"
+    >
+      <span
+        class="w-2 h-2 rounded-full inline-block flex-shrink-0"
+        style="background:#0891B2;"></span> Wisata
     </button>
     <button
       class="map-legend-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[12px] font-bold border-[1.5px] border-border bg-white text-text-secondary cursor-pointer whitespace-nowrap transition-all duration-150"
-      data-filter="kuliner">
-      <span class="w-2 h-2 rounded-full inline-block flex-shrink-0" style="background:#16A34A;"></span> Kuliner
+      data-filter="kuliner"
+    >
+      <span
+        class="w-2 h-2 rounded-full inline-block flex-shrink-0"
+        style="background:#16A34A;"></span> Kuliner
     </button>
     <button
       class="map-legend-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[12px] font-bold border-[1.5px] border-border bg-white text-text-secondary cursor-pointer whitespace-nowrap transition-all duration-150"
-      data-filter="akomodasi">
-      <span class="w-2 h-2 rounded-full inline-block flex-shrink-0" style="background:#7C3AED;"></span> Akomodasi
+      data-filter="akomodasi"
+    >
+      <span
+        class="w-2 h-2 rounded-full inline-block flex-shrink-0"
+        style="background:#7C3AED;"></span> Akomodasi
     </button>
     <button
       class="map-legend-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[12px] font-bold border-[1.5px] border-border bg-white text-text-secondary cursor-pointer whitespace-nowrap transition-all duration-150"
-      data-filter="penunjang">
-      <span class="w-2 h-2 rounded-full inline-block flex-shrink-0" style="background:#DC2626;"></span> Penunjang
+      data-filter="penunjang"
+    >
+      <span
+        class="w-2 h-2 rounded-full inline-block flex-shrink-0"
+        style="background:#DC2626;"></span> Penunjang
     </button>
   </div>
 
-  <div id="watukarung-map" class="w-full" style="height: 340px; border: none;"></div>
+  <div id="watukarung-map" class="w-full" style="height: 340px; border: none;">
+  </div>
 </div>
 
 <!-- Leaflet CSS -->
@@ -231,7 +267,9 @@ const totalMarkers = markers.length;
       btn.addEventListener("click", () => {
         // Remove all active classes
         document.querySelectorAll(".map-legend-btn").forEach((b) => {
-          Object.values(activeClassMap).forEach(cls => b.classList.remove(cls));
+          Object.values(activeClassMap).forEach((cls) =>
+            b.classList.remove(cls),
+          );
           b.classList.remove("active");
         });
         btn.classList.add("active");

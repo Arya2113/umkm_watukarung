@@ -7,7 +7,9 @@
     "kontak": "6285290820341",
     "pantaiTerdekat": "Pasir Putih Watukarung",
     "linkGmaps": "https://maps.app.goo.gl/9JuTyk4Su9bZgMX68",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.238100",
+    "longitude": "110.978200"
   },
   {
     "nama": "Pom Mini Bensin Frizka/Faiz",
@@ -17,7 +19,9 @@
     "kontak": "6282143057545",
     "pantaiTerdekat": "Pasir Putih Watukarung",
     "linkGmaps": "https://maps.app.goo.gl/Zg8dHUYSFL4NLNx78",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.238000",
+    "longitude": "110.978000"
   },
   {
     "nama": "Pom Mini Bensin kali bendo",
@@ -27,7 +31,9 @@
     "kontak": "6282136589019",
     "pantaiTerdekat": "Pasir Putih Watukarung",
     "linkGmaps": "https://maps.app.goo.gl/SSUjFiAxdvbMNKCLA",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.234500",
+    "longitude": "110.973500"
   },
   {
     "nama": "Toko Putih",
@@ -37,17 +43,21 @@
     "kontak": "",
     "pantaiTerdekat": "Karung",
     "linkGmaps": "https://maps.app.goo.gl/Yo59bc9XEL3QbaQ89",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.237500",
+    "longitude": "110.979500"
   },
   {
     "nama": "Toko Al-Faza",
     "jenis": "Minimarket",
     "alamat": "Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
-    "jamOperasional": "7.00 - 21.00\\",
+    "jamOperasional": "7.00 - 21.00",
     "kontak": "",
     "pantaiTerdekat": "",
     "linkGmaps": "",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.234000",
+    "longitude": "110.973000"
   },
   {
     "nama": "Kios Wahyu Lestari",
@@ -57,7 +67,9 @@
     "kontak": "",
     "pantaiTerdekat": "",
     "linkGmaps": "",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.240000",
+    "longitude": "110.982000"
   },
   {
     "nama": "Januari Mart",
@@ -67,7 +79,9 @@
     "kontak": "6282257189720",
     "pantaiTerdekat": "Bercak",
     "linkGmaps": "https://maps.app.goo.gl/buRWbZRKdC3C39sg7",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.236500",
+    "longitude": "110.972000"
   },
   {
     "nama": "Masjid Dusun Gumulharjo",
@@ -77,27 +91,33 @@
     "kontak": "",
     "pantaiTerdekat": "Pasir Putih Watukarung",
     "linkGmaps": "https://maps.app.goo.gl/LhfrDsKPS9mCF5UV6",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.236000",
+    "longitude": "110.971500"
   },
   {
     "nama": "Risca Laudry",
     "jenis": "Laundry",
-    "alamat": "",
+    "alamat": "Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
     "jamOperasional": "8.00 - 21.00",
     "kontak": "6281232684154",
     "pantaiTerdekat": "Pasir Putih Watukarung",
     "linkGmaps": "",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.235000",
+    "longitude": "110.974000"
   },
   {
     "nama": "Tri Putra Motor",
     "jenis": "Bengkel",
-    "alamat": "",
+    "alamat": "Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
     "jamOperasional": "9.00 - 2.00",
     "kontak": "6282336471605",
     "pantaiTerdekat": "Pasir Putih Watukarung",
     "linkGmaps": "",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.235200",
+    "longitude": "110.974200"
   },
   {
     "nama": "Masjid Dusun Ketro",
@@ -107,16 +127,20 @@
     "kontak": "",
     "pantaiTerdekat": "Pasir Putih Watukarung",
     "linkGmaps": "https://maps.app.goo.gl/31ZBwJirbPzKmFQa9",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.238500",
+    "longitude": "110.977500"
   },
   {
     "nama": "N-Mart",
     "jenis": "Minimarket",
-    "alamat": "",
+    "alamat": "Ketro, Watukarung, Kec. Pringkuku, Kabupaten Pacitan, Jawa Timur 63552",
     "jamOperasional": "07.00-20.30",
     "kontak": "",
     "pantaiTerdekat": "Pasir Putih Watukarung",
     "linkGmaps": "",
-    "mediaSosial": ""
+    "mediaSosial": "",
+    "latitude": "-8.234800",
+    "longitude": "110.973800"
   }
 ]

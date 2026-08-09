@@ -99,6 +99,11 @@
   .map-btn-active-akomodasi { background: #7C3AED; border-color: #7C3AED; color: #fff; }
   .map-btn-active-penunjang { background: #DC2626; border-color: #DC2626; color: #fff; }
 
+  /* Titik point (dot) otomatis menjadi putih saat tombol aktif */
+  .map-legend-btn.active span {
+    background-color: #ffffff !important;
+  }
+
   /* Category pill active */
   .category-pill.active {
     @apply bg-primary text-white border-primary;
