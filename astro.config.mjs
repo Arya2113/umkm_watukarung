@@ -5,4 +5,7 @@ import { defineConfig } from 'astro/config';
 // Output: static — siap deploy ke Vercel sebagai static site
 export default defineConfig({
   output: 'static',
+  devToolbar: {
+    enabled: false,
+  },
 });
