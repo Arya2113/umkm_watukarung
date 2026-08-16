@@ -6,26 +6,35 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="sticky top-0 z-[1000] bg-white border-b border-border transition-shadow duration-[250ms]" id="navbar">
+<nav
+  class="sticky top-0 z-[1000] bg-white border-b border-border transition-shadow duration-[250ms]"
+  id="navbar"
+>
   <div class="max-w-container mx-auto px-5">
     <div class="flex items-center justify-between h-[72px]">
       <!-- Brand / Logo -->
-      <a href="/"
-        class="text-xl font-extrabold tracking-wide text-primary uppercase flex items-center gap-2 no-underline">
+      <a
+        href="/"
+        class="text-xl font-extrabold tracking-wide text-primary uppercase flex items-center gap-2 no-underline"
+      >
         JELAJAH WATUKARUNG
       </a>
 
       <!-- Desktop Nav Links -->
-      <ul class="hidden md:flex items-center gap-10 list-none">
+      <ul class="hidden md:flex items-center gap-10 list-none ml-60 mr-auto">
         <li>
-          <a href="/"
-            class={`text-[15px] font-semibold py-6 relative transition-colors duration-150 ${currentPath === "/" ? "text-primary nav-link-active" : "text-text-secondary hover:text-primary"}`}>
+          <a
+            href="/"
+            class={`text-[15px] font-semibold py-6 relative transition-colors duration-150 ${currentPath === "/" ? "text-primary nav-link-active" : "text-text-secondary hover:text-primary"}`}
+          >
             Dashboard
           </a>
         </li>
         <li>
-          <a href="/tentang"
-            class={`text-[15px] font-semibold py-6 relative transition-colors duration-150 ${currentPath === "/tentang" || currentPath.startsWith("/tentang") ? "text-primary nav-link-active" : "text-text-secondary hover:text-primary"}`}>
+          <a
+            href="/tentang"
+            class={`text-[15px] font-semibold py-6 relative transition-colors duration-150 ${currentPath === "/tentang" || currentPath.startsWith("/tentang") ? "text-primary nav-link-active" : "text-text-secondary hover:text-primary"}`}
+          >
             About
           </a>
         </li>
@@ -33,23 +42,12 @@ const currentPath = Astro.url.pathname;
 
       <!-- Right Actions -->
       <div class="flex items-center gap-3">
-        <!-- Bell Notification -->
-        <button
-          class="relative w-10 h-10 rounded-full flex items-center justify-center text-text-secondary bg-transparent hover:bg-bg-top hover:text-primary transition-all duration-150"
-          aria-label="Notifikasi">
-          <i data-lucide="bell"></i>
-          <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-red-500 border-2 border-white"></span>
-        </button>
-
-        <!-- User Profile Avatar -->
-        <button
-          class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-white hover:bg-primary-hover transition-all duration-150"
-          aria-label="Profil User">
-          <i data-lucide="user"></i>
-        </button>
-
         <!-- Mobile menu toggle -->
-        <button class="flex md:hidden items-center text-2xl text-text-primary" id="menu-toggle" aria-label="Toggle menu">
+        <button
+          class="flex md:hidden items-center text-2xl text-text-primary"
+          id="menu-toggle"
+          aria-label="Toggle menu"
+        >
           <i data-lucide="menu" id="icon-menu-open"></i>
           <i data-lucide="x" id="icon-menu-close" style="display:none;"></i>
         </button>
@@ -58,13 +56,20 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <!-- Mobile Drawer -->
-  <div class="hidden absolute top-[72px] left-0 right-0 bg-white border-b border-border px-5 py-4 shadow-[0_10px_25px_rgba(0,0,0,0.08)]" id="mobile-menu">
-    <a href="/"
-      class={`block py-3 text-base font-semibold no-underline ${currentPath === "/" ? "text-primary" : "text-text-secondary"}`}>
+  <div
+    class="hidden absolute top-[72px] left-0 right-0 bg-white border-b border-border px-5 py-4 shadow-[0_10px_25px_rgba(0,0,0,0.08)]"
+    id="mobile-menu"
+  >
+    <a
+      href="/"
+      class={`block py-3 text-base font-semibold no-underline ${currentPath === "/" ? "text-primary" : "text-text-secondary"}`}
+    >
       Dashboard
     </a>
-    <a href="/tentang"
-      class={`block py-3 text-base font-semibold no-underline ${currentPath.startsWith("/tentang") ? "text-primary" : "text-text-secondary"}`}>
+    <a
+      href="/tentang"
+      class={`block py-3 text-base font-semibold no-underline ${currentPath.startsWith("/tentang") ? "text-primary" : "text-text-secondary"}`}
+    >
       About
     </a>
   </div>

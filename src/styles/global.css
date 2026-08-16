@@ -105,8 +105,18 @@
   }
 
   /* Category pill active */
-  .category-pill.active {
-    @apply bg-primary text-white border-primary;
+  .category-pill.active,
+  .category-pill.active:hover,
+  .category-pill.active:focus {
+    background-color: #0E4F4C !important;
+    color: #ffffff !important;
+    border-color: #0E4F4C !important;
+  }
+
+  .map-legend-btn.active,
+  .map-legend-btn.active:hover,
+  .map-legend-btn.active:focus {
+    color: #ffffff !important;
   }
 }
 

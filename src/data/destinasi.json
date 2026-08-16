@@ -1,6 +1,6 @@
 [
   {
-    "nama": "Pantai Jantur",
+    "nama": "Pantai Jantur (Pantai Nami)",
     "kategori": "Pantai",
     "pengelola": "",
     "alamat": "",
@@ -14,8 +14,8 @@
     "linkGmaps": "https://www.google.com/maps/search/?api=1&query=Pantai+Jantur+Pacitan",
     "instagram": "",
     "linkFoto": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4QBoRXhpZgAASUkqAAgAAAACADEBAgAHAAAAJgAAAGmHBAABAAAALgAAAAAAAABQaWNhc2EAAAIAAJAHAAQAAAAwMjIwA5ACABQAAABMAAAAAAAAADIwMTg6MDc6MDggMDY6MDY6MTkA/9sAhAADAgIKCggICAgKCggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKCAgICAoJCggIDQ0KCA0ICAkIAQMEBAYFBgoGBgoNDQoNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ3/wAARCACgANUDAREAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAAAwQCBQYHAQAI/8QAQBAAAgEDAgQEBAIIBQMEAwAAAQIRAxIhAAQFIjFBBhNRYQcycZGBoQgjQmKxwdHwFBYzUuEVkvEkcoOiQ0SC/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAKREAAgICAwACAQMEAwAAAAAAAAECERIhAzFBE1FhBHHwIjLB8ZGh0f/aAAwDAQACEQMRAD8A/dtHb68pI1SoZWhq6NEe+RqkVZ95OtEjNnxo6ohkDR0hETS0UIiaWnQiBpaqiWQalrSJLBNS10IgG1HVgDNHSAG1HUMpA2pallIE1LWZQF6WpAC9LUABalpUUCanqSwTpoExepT1SJYvUp6pGbFqlPWqM2LvS1Vk0BqUdZyZaQpUoaxZsjvFKnrA1DCnpjsl5eqFZ95erFZ4aemIiaWnZJA0tFgRNLTJPDT00Ig1LTTFQJqWtFIVAjT1eYUQKaWYYg2p6lyKxAvT1NjoC6aVjoCyaVjAsmpGAdNTYAXXSKAOumIA6aokC6aqyGheomnZLQB6eixUBdNS2WkLPT1k2a0d1SlrMoKKemIlZqgPrNOxUfWaLCj409KwoiaWiwoj5WjIVHhpaeQYkGo6akGIJ6OqyCgRo6eQUCajoyHQJqepsdAWTSsKAPS0WOgD09FhQF00WTQB10rChd10WFC7jSsdAXGjIKAONOxULvoyJoA+jIMQD6iy0hdtTZWJ3lE0rCgiposqiYTU5DxJCnp5DxPvL0ZBieGnpZBieeXp5CwImnoyDAiV08h4kGGjIWIJhp2GIJxp2PEC40sh4gHGnYYgH07JoC507FQs+lYUAfSsKAPoJoXcaYheoNIBdxoAA+lYULvpWOgDnUZFYi1Q6VlULNosKO+o2pyGkFVtS5GiRMNqcjRIlOlkPE+0ZBiexpZjwPCNLMeJAjTzDAGw08hYgmGqUhYgmGnkTQJtPIVAn1VhQFhosdAHGqyJoA51VkYiznRkLEXc6VjxF3bSsTiLVKunYsRapW0WLEVq7jRYUKVNxqWx0LVNxqRiz7nQMXqbrUjoVfdaBUfoNK41m2UkHWuNYtmyRNa41GRpRMbgaWRSRL/EjTyHR4a40rHRE7gaVjBtuNFhQF91qrFiBbd6qwxAPu9VYsQD73VWGIu/ENOxYAH4jqkGItU4hqkFCdXiQ9dURQpW40B3H31STJaQjW8Qr/uGqUWS6Eq3iVP92q+Nktor63ildWuNkOQvU8RDRgISreI/bVfGS3QhV8SH+4/rqvjROQrX8Rkdx+Gl8aByoQq+KT66fxIWQlV8SH11LgkUpCb8b/e/M6ijRM/Q/A/iJtq4B2+4o1wZjya1Op0MEQjEggggg5BBB6HXHKDOlUzO+LP0jeF7Os1Deb7b7esgBem9TmS4AqGCg2sVIYIYa0hojOs3BjcoR7ZtuHeJ0qU0q0nWpTqItRHQhldHAZGVhghlIIPoRrPA10M/9Y9/z0YD0ff9Z9x9xp4MNEDxweo++j42GiJ40PUffTwY9A24z76agFoE3GvfVYDtAn4176pQByQtU45q/jIzQtU47qlxkuaFK3HtUuMjMQrcb/vGtMCMhKvxs++qURZFfX4wT66pJDsSfiDa0pGdidfdn+41aozYjV3h1Zm7FX3h7aQtilfiDaKQOTENxvG7k6pJGbbEam7Pvp6IsUeoTo0KyApn11EmUiLbb97WLkbRQFtr+9rFyNlE/B203b038ykzUqgytSm7U3EejKVYEH0Ou916ectFnU8aVmbzKlZ6tQ9XquatRunzVHLOegzdMCJiQcZR+jXNm8+HH6R+82JVaDilTHmXKwetSPmZ/wBIuDKNzKVqDIEyAVbKXHfRpHmaO1fDz9N5gm2225Jr7h9wi1NxUASmKNRgCSQKcGnJcyoEKAC3zaj4mbx5l0zqHA/01+G1t7R2a+aDXrNRSuyW0gZC0i4YionmsYhkBQjmChlJjBlLmi3R2JvG1AMVNakGHVTVp3CQCJF05BB+hGjFmuSGf8yJNt63HoLhJ+gmffSxYskGPFhp4jyBvxYeuqUQyAtxb308RZAanGB66eJOYtU4wPXTxYZozXiP4m7XbkLuNxTpMchWaXjJmxbnC4+YrBMDqQNOhZo5bxz9LHarTqGilWpVBK01dQiPEQ5eSVQz8tt+PlEzqsTPMrfCf6VdNxbuqTIYP6yiLkJ7Dyy5ZZ6Tcwn/AGgm2sQUwnHP0oUUxt9tUq+9WqlEfUBFrk+kELoxQ8mUtb9KtgDOzF0GI3RImMSDtxifeY00kJyF9t+lgv8A+balR6064c95hXpUx6Yv9c4yzNzOieE/irQ3dIVaTQRHmU2+ek3+1gPxhhKtBg4IFqJLnRZVfEq+p+2niR8glU8TL6n7aeJOYpV8Sr76eJLnYm/iVff7aMSc0LVPEo99GIshap4oHofuNLEeQu/iseh++s3AtcgH/Nnt+f8AxrN8ZouU/HFKgpAM+5wMn+/766Tm+qMqFXg9P4dPrrcR9U2vSO5j/wA6OgB7vh0RmZ9iD9u33zqIysBOttDIIGRkd4j89WkMsKfGKl0mDiOlsehgYkesalp+FWzrPw0+MG4Soq03LMFAalXuqUyAQeWWlfYqViT1zpL8lZH7E2viaVVhi4AwTkSAYM9COmdVSJyZNvEB7wft/XRQsiJ46fX+WnQZEDxhiYnPtooWRzP4xfFUben5Pmqj1AbiGmqi4GES5wWmLiBAn6qmXE/NfiLxsmbGNao3V3vgHpLFrWeBHQx79tJRLujDbrilVjJc/gbR9hA1eJDY3teO7hRKuxA/3AOPzBP56TQrZouEfENWha4KHpeoJWfcCWH0F34amilyfZr6/BSTjp69dNGjZS8W2oUEvCqs5OB/Z++qSMyk4d8Q69EVl2sU/NCKzkA1QBcQUk2pNxkkMekRp2GNme3/ABncM5epWrM5M3NWqFgT6G7lHoFgD0GNCkDiXvhzxnu1VkXcVit12arsQYgwWJYKQByTbMmJLTRFI7nwPxmV2tKpuG5ioudwiSxnECyPQYEgA++qMGWH+YwQIIz+8vpjo2giwFXjY9R/3DQUAbi8nqpj94k/adIAFTjo/d/7j/TRQrRA8YHt+BJ/lp4iyPzdVpQPST/edcaOtntOpAyY/npsmgUmSev8/wANUloKHTXWyTknEzMfb/nPprNXYhRHgz29/wCuuh7GBrVM4EfXOlsAVLdlWBWQy5DA5B9R9NIZ2rh36Uu5tSmaNEOoCmszVWDkDr5Mrax7zVYdfWNOxUvRbcfHfekz5tvXC0qIH/2Rj9ydVRVIo+I/GffMc7moMzyBKef/AI1WR7Hrp0TozW9+IO6JJbc7gyZM7msRPrF8D0wBj20YgZ6pxIknuSZk9STkknuZ76dBYM706dBYzR40kw0THSepkdvsPx99KmUhxfNBuFKoFOc0ngqTiOWI6AE/nofG34CmkSbhW5JBSjUABDCVIhuoiQue6iD2048bFLkTOq+CfH+82VFqT7OjxFq9TzleqjV6tLlVW25FNSwAK+YFuMF36zC6OLXhCkn6XXiTw/8A4zaUd3uqFahu80X2uw2xTbgmtV8vcNRe91mmUWoyu7Dl5VGlLjboI8iTZzLf/Drd06w2jJc7BedbmpCc/wCsVCADqTMDEkEEDP436afIqNQ3wRYEDcbzZo2AoSrUqllBOf8ASpjGY5jORIjTXGZy5kbvhXgDY00SnIq1AvPURmUOY+Yq1SBPs1o7Rga2UUjmfI2y24t5FRPJYqaYgQSsyPUeZEjsZJ74nTYJvsV3XFjFoMoIHNToMYGM5Zj2Mt98nU2Iqq/GFi02Zwf1NIGPWRSmTjIIiNSUJpugOggD1f16fs/xn66VBZHcbsQRIEejgH2nIye5j+mrQAqL9cj8an9GjVCUTiqE9PXp6exOJH099eS9bO5nrUznMH6yPb8P7761TtBiCNPuCf5dft21qmTRAAxn7R/xHf8ADTVCoOtPpMGQCP6fhGgaR5UoT7f399MdAKlHOloD3h/CHq1adGmpapWqJSpqOrPUYKoExEkiScASTABIP2IZ+uvDv6ICGjRO4qOlaxfNpg03VXgBgjqBcs9D1giYM6648a9MXN+Fyn6IOyWWdqjd+ZjAjPYyR2IzOtFCJDnIrOOfo7cHpKPNIWfRqknpMENK4I9sjpOqqK8IuX2cz8T/AAv4Uqkbe4uRyF3qhCZg3Fizz39On01LxGpSKPxF4CoIlIrtVWoaauxL1ShLZAVfMCwBANwYzIkDGsU0/BSnJOrF9z4n3Vi0VFOkigBfLo01wOg5V/kMfneb6Iq+xOhU3B+aq5JPWSM/+0QP/qe0HSyY0ki42WxfDFixE5hGOfQmSJj2PtpZMZpKG/gDmb0GF7DpNlxx9CBPXusmOhi82lZIB+YLaAT6GFz26nrGlkFGe3OyJ7sR9TGfxjRYCo2EYBMeknP8joAc2G0HUkrHu2cGflkAD30DHzQOOZjPQdCRnEAfy0DoRbHY/wDa2T7Erg+89fTqAKIVN0Ii05n5gYPWBhWB+479OmnQA6XFV9AB0hS6k9u4Ue+JP5QUM9O/T5oIInJctPvkdfx0UMWHFl/8sPyBj+c6YHI03LwQSJJgjEx7GZP5682kztC1YGMD8YJ/uNONjaQOpxHp0H49Pp/X/jWiIsgdyYwT+J/v89O6Js8O5M/w1VhZKru4HMRk9zn7aQmF2PEAWUQCJEgm24TkXDKgjFwyJ1pGAmfpX4Uigr066bLb0qqD9VVSo1WqpgqTzJfeQxUuGZ+bJ13xgvo4pzfVn6K4Tx9zBY/h1H5gN94+mrxRCkxTxN4rsGRTjtf1OOy9z9O2spaRalZzLjnGfMObcCMAjH1J/h/yeZys2SMzQpxUVyAVBBZWeAyiMDL2kjEqMfxQ7SNLxxqL0nqFaKG4RSpANWzi4MWQxMQWCqIIsYwSLRnNXtGZ8TeAlpU6b8oaoJjzLlzkKeUc6+xIP4TrUhr7KD/pYESGB9BER19fr+zj11I6J0Dbm2enRyv19/uRPpqWyqH6265YVEYd5aAD9bDJyflGkWLjZiPljqcyDPqCoWPqD9tKxULHbKPT84Ht838vWNMVCTUFkxBOe4kT39T9J++mKiFGt3uGYHRT36QZ+kEYzoGS32/Ij0BzCJJMEwBdHNGAQD99BQegxYGQAeoBMdJwcrOB/taT0nsAxRzBOIEZxHoPURPTmMn76omxLdMmeWoY7rkGe/ysfX0/HTArioJIsb3DCZHvkRkT0ER2zqqCwJRB81q9YkL+Rugx7fzGigTOWna/1BJ/D015uR6GIGso9c56/h6T/c/i0xNAkqRMLfESYmPr1GTjP89aYtkWl2N7bhdaowVKbS3yi0579AOnv099aR4mZvkijR8M+Dm7qNDKUA6loUAdZ5iDHaQNbrgbMH+oibzh3wFooA1Wp5phRIDWXsQAFyLyxNijqxIjtO64EjJ87ekjb+FvhAo5giopi0QwcdpYKLV7Ylp68skDWMEjOU2zqnCfBloWB07tPr6Rme/N9+ur6My3reH6pU2n1i0lcfUE59LQPeNYScvDSNGe3Hw6PzNTLsfTzXOe5NxJ+3v7HnakzZOKFB4HcfstTzEurqPf9kdPQEz9dRhIpNFTxnwK1vmAt1ILBYOJA/1LTn1gj3wJrBhoy+74U4LLUeo37rG1egjNIJP4E+466lqho7V8F66japQZI8v/AHujmsZJuUMTUAHTICqICmBOtUDSovfEHwxobimw8pKBnkemqhgAekgW2noZk9fedMUYVIwPEP0ahBNPckHqA9MEfTla7r3j8NQ4l7XZVN8AaoIYNTqHrPPIiOgZljPYL6dNZuDHkWW2+DTJDyKz9Cr00gKesIysD06sR17dRSiOzScP8B0jmpQoU4WLUS0+xMqpEfukRP46uhWebTwbtbihpozdSqUgWUYEFsmJ9D179NNJBZHivg3bJyijDYcFadxQMbSSFVhjmaDHXF0RpuKLE+OfDulUNNFVUQrUqtUgQppskLEXAywJ7Wo2QWBaMAuhal8PaNk2BWiCoI5CpgxhWsBBjKdAYGdGKIbPN94Mp2RSQLMA1FNK9fW0sxKyOpSWjoZzqqEYzdeBKVOret1STDebUlSWABEmCTNrEKVPvlxqlEeTZR8S4RQDsapSnTY8i3SSqhSOZ7jJPmnMACyYOTWK9E2Y/iHD6BYikado7u6XQQI6sBjPTtHToJlFAjiu24c7kBFZjjAUkmfzOvKjBvo9OUkhndeGaggMAkRIZ1WJj3PYg9O/11uuJ+mT5EdY+Ffw0FTaX3MWarN9IqoTyyRHOj+ZcRLFlwAAoWTd6HFxLHZ53NyPKkjsu18Dnsx95dmkECJJM/Yp2gY11Uji2G/ynTUEMSzgA5EWC4i84wgIMzMhTAJDRLZpGJouAeDFbnqqMSFOTAJJtKE3I4nBlioAFwJcGbNejYbfZBYH4TbP3IH8tTY6LOhsh9f79Bj8tJspIepUB6T/AC/hqLAKqmZifToI+k5n8fw6aLKQvxTZuwhCQZ6wD1/9zAH8Z/ESNTQXRkK/AghLVHeouSaLeRknAhgqtIPNAaPyXSoLKXjnAli8bVm7kqAakdiAViY7BhHeIBEtFWYfiXFqIP8AoPKiJRAWVgSJkFBPbAJjAJjUXRVlqPjNub0dZamCZp1KagnsQSlrCJxPWO+nkFlxw79INfMRNzSFMM+XRmIWIC3KyCAZ5mLi0SYxp2PTOnU/FO2c2rXpOSJim6sYkExaTievWJ07BxG3SflOCsAgyAR1yRgkH2mPqdCZLWhCrwkfj07qD07rkkaCKKPiXh8E5mRdaQtzhgC1wuVh0U9V7d5Mg0IbdnWuqFzmkTzMTcnmDMGDylgMXDmItEGSy/D7i+ySoEJm8GQKdR6ZyIYGYV7cs1Nxa1vMP2tNAmT2vFVLZwz4ZHDB/MslSiuAWSpTQsJutK25YVArIaPq2zUJysyNGTIB+jLDA59Rj92ToIujlvjLjDoHW5Koa8vGKgprURDYoZFJZGKkEkTkkmFJZpHbObeOOOmqoaHQS7WlwsqpUsqOC8FCykoZUiAWyTpylaKjF2cx33iQrVf9YjqQlpZ6KAdSQvnWsQAQJgwQRcwAY8suZRdf4bOtcDklWhjb+JwJDKWIckhAiKcATcKZcrAMfKQGGSZ1jHnRcuMjuOJgoCnlyckrLYkgTeQZxGUGPoBrT5DJx2dD/R639Y7s0hVtoSzPRtUq0gERcy2EuQZUMSLhHQjo4ZNnPzRTR+gOK8RFNywfy6SwterCFKV8iebAqBvLOQ6orszoZE9dnEo3/gLwzbOagUKDTpuSjMQHqDyg3nVIVTf5pKhbTFwqEuSq0Qp9Gqp7rtgfcn3iCI+xJ1NkplntnAwI9u2Prnv2xqTVDX/Ucjl6+k/xAPXtMfy0h2NLuZ6AAwCZnA+2jQz4gz80CegIyD9MxpWMnT2YPYKZzGWOe8evvH9QdA6dW48vyKCqtAILA5MnsoFszli3+zRY6KLxTuqkQszPzAFQJ7Bqau8ep5R741NkNmC4j4PaobpX58Sl5YdDdUCKeswWJJEGQZmGgTMz/lN1qNM1kluVaaQM4WTeQMEGVzGs8R2yq3XhOt/iFY0VpbcsFZGpc5kVINOpcVLTZPmCLZjJEUUiZ4fSQmnaKDeZAKwXqgnC3AjyzOCDg2yT0BA6LSp433qIAj2pRtUGsFJqErIg+YvmVbX+V4PUsDBgLUvGWnC/i/uadUHcLSr0WT/9e0VVK4JF+4ggswJUievMY0WJNFxuPjDRaVNOrTDAnzKltoTDG6pTqOKd0soDYOActptlRSZe7TiFxSpTEgorL/pwtMvTp3OQbgrBDUxIFgkgxCspxFeLeIaVJKhrOKa/r2LOwtvd6xtzIUBKbPbMsJz2DslRbqjH7L4i0qtQVKJD/q6NanBUJWV1jyw9zL+sN1pLSXW5QwFcCk0P46Wx/beOqDKK02Fg1T5IsVAE9AQfM5D+8ewIOqOeUHdHHvGXxCqI9WhIcgVYJIcNSqgP5w8s3C1gWZakKBg2wGOcuRLR1R47OI+JfE1RyDIEgq8A5Be6DLNmRIlmtAUCLY1xcnLo7+PjKNODlssVAkgXFhMHMBQxjpkgA9icx5sub6O5carbHwOaRiYE+nWZjsPb761Ry9sJtacmBIwG5ZKkEK0giSBcejR179T0RZzySRCrU5uoz0mP3smesAAZOemtkyKLjhPiivRQpRrVUplhUFNajBDUVg6tZELDrfgCT1BkW6Kb6FJJ9mv8M/G3e7d2ZavnF2vqCuDUV2sCCWkOFVVFtNXCgyYl2J2XIzBwi9Hd/hz8c6Fah/62tTobkMwMjy6eSTTZFd6hNoZVJZhLK8Y66rkTMJcVdG/peKSBbazuDabQkEiJi90XHfJg3dQCdXZk1T2W2w4kXVmJIipaEPzLYeYtkqS1rOpyCjJ66Cg204ujB/LJLrcACWUSMAlptHSSRPbGQNSMsqHGblU2mcyywwgT0LWkrCnJHsAZ0DFPEHEpApKbUD7c1qizNj16YFFWjrWF1xUkrTzyGpSfUs0Wi72m6ywMBVSkVGFUA+YLfoAgwek+kDTE+iO5Ny5wehGImMHoeoAMe40yWV1XfCSr5Fshgog2zIgPgDMSoB6dYkoRV8b3lokKHUKYQIAIYhSvMYcuWkQRJBE50AUnEeMUSiy1hqU2Kq62E3kOCKTjsGdflMtd1I5VRZT1qwuo1KSSpYsVDKiRUEFgVCFoKrm605//AKVCa8A8X4fTuSTIemhqDzJe5iQtssKQDLStVnSCZyScFDXVnPd9t6flEUyoqmsWpv5aqlJeZWgXYFNmelaqMxtUXC6TBajvZjPE3iEKAatYVAtGHV5qJcIsKjlJALG0rAmZXBAxk67NocTZi9x4yag1cUK1S2kjqgpk071JqhadS44m+3CELOFJeDlLkxejpjxWkzKeJviTudxQqberUvp1Gp1Sgl3aoJXJMiotMp5guWbk6i1SmT5JPRrjFDHgDxktGk9CHViWPWFqMaq1kvUi35qQSyHRfMqvK3kDaPJS2RhbHvEPj2rcad4RTa1VaYUU2h/MkQEMGBeWVSAAMhmvwnztOjVcS+iXEfGKOhWJZ6mXcBmibVMpGUUIUSPLVrgFgktk+dfRa4a0Um+r3VRUItFg5RNrMhMzn5pIvbBMT8zTrklN1r9jphBR0VzMWJm4kGDA6R0ERyhRAtHTWbcl0N2+h2tVFwELktMzALh4AAgi6JgxNzCZwezo4ojygrUboWhRE4kMZnAwAVEICcAAQRG0DGXQjX24drWzdE/vQHJYASRBMKFmJ6HWi2Q9Ic4YSywIYxb2loMLE4W7BkR9pGtY/RnJejnDqRAt8u8lWs5mAWAYJCiT63dI6RjWpBrvD6qYZNotWpTMw0lGiWCOGYXzKwhaSQB0YldER0d/8GeOU3FpUMrVHqVfKcc/NU3DGnkgAU3qU0mCoUrgArrRS8Inx9su974vVK1NVaz/ABUICFlVqU6bPerWOhXyBULXWiaKICTUEWYRTp/gueG8bC0UIJUKVhYMrGAFxJHKRCkdT6EaGV6HpcSKqxb9ZXVgKVEm0MzSadMBJAsIq3tz2rSd+YLAkrT/AGJ7dqSUUYku9bc0Kjspq1FqVDXou7+W1ypK4gBfLVVEgIYKANsfGCla7swQ+ZKSVcWFEFKbWJyOZgcgMc8hYtBJbVEavidPMalUJXzbH5pS6JLqJUYVKTk1GYKLhzD5VPwUo6K3feNKS1qVBmDOKoXFpLpUpsSzMhdIBTnUwsAHlJQaLoSjpsjxfiRErF7GnVCKSl0ny1IXJ/acOikTEQcxp2SkZHjPFKXmKKjM9SFFrXKiISgqqyqsrKkkSwhigN6U3Gokyo72cW+Jv6UdbbVa2z2u3p0zRqrDvUd7G8uHmlC2sxqFjTp1gFK5LeYVTmfJ4jqXGqTkcf8ACvxjqirVfeVHq+bblyx6K6BhghCLr1CpYGzZJM45tHQsXp9DnEfjHvD5rFLqdMs1JxNPyg1SmT0UEgMlNULSRyjrGhTbBpK6Wig/zm1QEXFFPy3FSTmSFJMySSTg3EsbgWM5zt9jjMHxXidoFwPNTYrBNrKwJhgJuBVuQrUWxsjuNZY3tGudKmI7reR5hUFQYAnNoE/K3zAG4kkQSZmYB1aRi5UVO33xDLBCgMoAYkqqkkN/HJMtERMYuW0TGVOzcDbTHXIySST7SciAI64iOoA15js9W0Q2W3nJzDDAAJiDEHqOmAcTnrB1LdAqJvTLFpIQMtoEEGC09QC2JY9GJYzksxKcvB9ie93zk9p6N25vXPciCcD0jGmkS5ND+93RFWRaQpNUE9crc4W26AlUSAezDr110nGutltUrw5GLjTDBzcYh6mGXEHIBtZh6tGRunRlWRceFDS/w7LyrXlqz1KhYqKdEbxrVQqRaymC1O0sSg5LQ69PE9ETjbr+eDvwx2JTcRAVzRpVKaVGIHmC6nXZSLah5fLJUMLWciAJbWvGv6jHl3HR0WvQpmoaZVarSlQOICli7fK4FptCElQGXPykuNdTSORN9lT4W8SUv8MzVChqHzrkQKoCUzYgBak45lpo4YKpVqsNNrazjJUdEou6Rmtn4gKVtvVV7vK8uiy3OtKxUPNUQGQLQhYyPlEioALMW7dm6VaOs0d6K6tuFlCAtGjNVatGg1KowZi9pLE1iVIKEO1JCH51qPunezmlCn/2W9bxrNOjSpXhlJLU2CuyVabKpoN5gF9kh7PMU97iMrTd9GSi7t/z8lfw/wASbh64rAqUQNQpKQ1PzUp2mtUe+kwqX1P1apTuCKJLOKjXpfZdUqI8U+IVKoaSU76pao5q7dbP8Qqqb6yRWHqthpgkVFZisQdTKXhceN1ZheK/G9BXO2ovdTWtTIrialNgzo9RCxcB8Kt1VQVLU6gB5gusXzpOjojw6ssPEXxLpUvPrUmFTckJTp1YtrHlLwxDNO38yrVCNTjy1qMQSXe5S5kk2uxx4m6s4TxHxHualU1Wqszh2KMLVA6Hoi80BoBqXm1rehtPDLmb3Z1LjS0azwL8VtxRb/1D1dwBUDZqWsin5ghIliGHmimLFZ4l0LC3SH6jF72ZS4VK0abxL8YVrsUVWVmRz5suSJNNVS1oEMi87KGlwCTUKqdbP9QmRH9Picj8a8MDbqYAarTRjlYZ1BU2kxyuFBBfLZN3QDlzt6NZQpGb3XCzALKAAZKswDBBgM2QQC3J2JjoZGtU7Oca4N4eLoxvIjlKyTcQbACFki0EkEwLOkSBqXKmaJWg2/8AD9L9W9NjTSotVrKiqwUo4pimKnmXhpkyaeAMkgiWpa2RKK8J7fhlS5adQXrJuKXQQDDFL1UKoAEFlgQDAkjT14K30B3e7Yl0C2gCnggTdiSeQC5gZkienWLtSlQXZX1uF88ENGcgT2BuAmDHcSP4aqyboZ2HE7GCXSoJAtXnOWIM3RCtLEdenpK48nEpb9N4cjVfRsvICx5Ymm6ggTIMm1SLZPzAgXDFpxg689xcf7j0IyT/ALeglYQEaLCWYGpJmGUKBavuVMgC7pKgahXb+voTTvshwOjStbzoVpxdIJECIWTA9DPeO2suac1WEW1+BV9lTunDQSDc1QxTmeQq3Qg28wIFxm3uJwfRi9nNJf02Wo4mpUTEsKbEt2CsUaIuw6AxbcAGHSATo2ZRYltKTgoisGuFqCZQ+YbYqYgrTuNQLKh7VGVVwdYOyno3nivjagbWqosZGqUZTlZadVUs6HzC4alSp4kKo/aBhuyUumcsY9rz+f8ArKfjm/qJUUXliQwaoT+sDDIIQCFZjChWWVW3tJaJzaLhFfQjX8TKE8s0zTqB6wIkjLuSoIi0FZMhZJhRIETk+bVUWuPdix4iFIBLgFRIygWpcpulRDLylZkehPKCUp7Gl6WW38XVKCxRJRalOiSilRTcC4JfOVs5gARItAA1p8ldCxvsteMfE4E7isG59w3yBBeho2LSrMrlkvZQ5wXQGqIJKCD5l2J8e0voju/i4TTRaZ8l0hQ1lOrgIUWqjvdVR6QyFUgvalxQ0ufOf6nX0OPEltmQ3vHXqdGFJRYg8pmQ8sktN197G5yActnlwdc0+Zy2jZRVP+elcaQ/ZkKce6wZkEyDAz/MkAjJt+l68DNugoMEGYMDrIkBWHop6Ez2GMxi23IVn1TedJEgxH5D36RjrknprV0ym2OeQcFczJ7ZIknIPv6TifqJlJ2Tp0MZBLPkdSWgmM4IBnCzJBn/AGaTbLiUVXi5kLbayjsq3ErTi64ScAjGQLswQAOiMa2cXJO3RCsxcEEmx4DsReyhD+rXHVbFDnu1QN/tU6uLrszexngptYpLMi2uJsBMLMPzCASbZmevWJ0psvjWx+jw5qlZChWVZTRBBtccpZoYksnQmDzc/TmIWSSLweWv9i/EN/UNeoytaAaimoltx5gSKbBAVV2EsFK3DrPXWqjpGEpbF+K7UtU8xWBLdUtqM7wAQRNq3HtJAPWB3d0IZPh20MxAQhVqGm5IXqEOApKEXiqRcBYjgFjYpSY8So3QAgoDexaFSCFMEdJUhThgCojr20WH4L/hSlKSqQSyKyMosJEtOBzBj3yZBnmHTXBypTZ6PEmlsEd+Yb5ZyUJ5WEGWVZgDmJkjMn2ENILTbINxQTLQWIEsFm7J68w/n/DTSxM7RGsjFwYBLMGtDSQqKQQIhSBAAiOhMidZLmjt+L39zmc01fhNuH2A3MpggAZaeVWQHGQqsBIOLYkHOmuZSVq/5oakqsrKO7hjmZIYxmSbhcs4ETcT15e0cvQmrHs0/H/GLVVUAZiGzHygrcYHeSwiYlcypfXS+VtbM6xKutxBiiOxF9wBWwqVZQydMjDk57z2hoxcm+jVEaSza7BTaYtM/tyOsHmFMhuxnpNs6Fp77H2CG8IBJETGMSeYElR1FpB5rRORnI0234HR5X20GVBNMxjEBpCkdSCFzEE4twCw1krf7mj1tAK2yzmLoB65tU2hB0nqW7ybuwgUiGSr7SGzC2kBZPL0OcyQJuMDtE+7pMTdbGH4bbcbhzBQRMw4BLZjIgAiBDScHvk3+AVU2NUdvAYAxCpzATbaFvx1OBFo+Ykdc6V6Etuv5QOq1MuVZgIwoEhgoHzYOFgwYBntBllpccpLQSkovZVJ4hpKAwuZ2/YZYURIUmCbj+JETHzcuq4H14Zvk0T2PG3dlRXFKUDN0tUEiwdhJDBiSOhUdbhq/jhBdCUpPV0E3nHGUIhc1PMDB6ioAxWTCgTOeXowBVmBmARSgruhZtKrK7dVFFr5jKwpFkFLWOVukSokZMziBpN7oSWrGdjugaTwEBxMX3kcotALkEDrK2/tSYOhqtjWh/YUAr9LboU3QWCiCZWRF3NhcjEdtJ7NIPZc06RY4KUl296K5UrarkMCOkBVwDgBTlWCyMtf8nTTf4S9MvS3IA5pPsSZkiCIBj65j7a6UcL7GuGV5EPAAExHZfbtkdZ+kRhUNHu43TQQg5TIeVZmg5dcAwt0HJz3mYEpWXZQDfm4d4LRjlBYzaQCBaI9YAxq30JI1W44o1rgw0MSMKpZXhihAgck4A9e+NccsbpHZlqyv3dVWZbWs6fKOtwE3ASYBuECSAR6Z0iiZb2jzdbp0tC3JKhiJCiTjlKzcmJBJJGRJidNpemNs//Z",
-    "latitude": "-8.242100",
-    "longitude": "110.978200"
+    "latitude": "-8.2387171",
+    "longitude": "110.9749402"
   },
   {
     "nama": "Pantai Pasir Putih Watu Karung",
@@ -32,8 +32,8 @@
     "linkGmaps": "https://www.google.com/maps/search/?api=1&query=Pantai+Pasir+Putih+Watu+Karung+Pacitan",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Pantai+Pasir+Putih+Watu+Karung+Pacitan&tbm=isch",
-    "latitude": "-8.245500",
-    "longitude": "110.980300"
+    "latitude": "-8.2369229",
+    "longitude": "110.9526126"
   },
   {
     "nama": "Pantai Kasap",
@@ -50,8 +50,8 @@
     "linkGmaps": "https://maps.app.goo.gl/iraVqHm5CUvTXfb47?g_st=aw",
     "instagram": "@pantaikasap.official",
     "linkFoto": "https://www.google.com/search?q=Pantai+Kasap+Pacitan&tbm=isch",
-    "latitude": "-8.240280",
-    "longitude": "110.982850"
+    "latitude": "-8.2369229",
+    "longitude": "110.9526126"
   },
   {
     "nama": "Pantai Waduk",
@@ -68,8 +68,8 @@
     "linkGmaps": "https://maps.app.goo.gl/pJo16DJ6piKGkSTy8",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Pantai+Waduk+Pacitan&tbm=isch",
-    "latitude": "-8.239100",
-    "longitude": "110.992200"
+    "latitude": "-8.2356678",
+    "longitude": "110.9692144"
   },
   {
     "nama": "Kali Cokel Pacitan",
@@ -86,8 +86,8 @@
     "linkGmaps": "https://www.google.com/maps/search/?api=1&query=Kali+Cokel+Pacitan",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Kali+Cokel+Pacitan&tbm=isch",
-    "latitude": "-8.238500",
-    "longitude": "110.984100"
+    "latitude": "-8.2364831",
+    "longitude": "110.971557"
   },
   {
     "nama": "Spot Foto Raja Ampatnya puncak kasap",
@@ -104,8 +104,8 @@
     "linkGmaps": "https://maps.app.goo.gl/ap64KKfHW5pXEwcDA",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Puncak+Kasap+Raja+Ampat+Pacitan&tbm=isch",
-    "latitude": "-8.240300",
-    "longitude": "110.982800"
+    "latitude": "-8.2401514",
+    "longitude": "110.9809838"
   },
   {
     "nama": "Pantai Bersah",
@@ -122,8 +122,8 @@
     "linkGmaps": "https://www.google.com/maps/search/?api=1&query=Pantai+Bersah+Pacitan",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Pantai+Bersah+Pacitan&tbm=isch",
-    "latitude": "-8.239000",
-    "longitude": "110.990500"
+    "latitude": "-8.2337421",
+    "longitude": "110.9578672"
   },
   {
     "nama": "Pantai Blosok",
@@ -140,8 +140,8 @@
     "linkGmaps": "https://www.google.com/maps/search/?api=1&query=Pantai+Blosok+Pacitan",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Pantai+Blosok+Pacitan&tbm=isch",
-    "latitude": "-8.235500",
-    "longitude": "110.995100"
+    "latitude": "-8.2332196",
+    "longitude": "110.9507472"
   },
   {
     "nama": "Pantai Bercak",
@@ -158,8 +158,8 @@
     "linkGmaps": "https://maps.app.goo.gl/3vW9QXgAFUiAkQXNA",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Pantai+Bercak+Pacitan&tbm=isch",
-    "latitude": "-8.241200",
-    "longitude": "110.979500"
+    "latitude": "-8.2420553",
+    "longitude": "110.9816182"
   },
   {
     "nama": "Pantai Banteng Mati",
@@ -176,8 +176,8 @@
     "linkGmaps": "https://www.google.com/maps/search/?api=1&query=Pantai+Banteng+Mati+Pacitan",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Pantai+Banteng+Mati+Pacitan&tbm=isch",
-    "latitude": "-8.240500",
-    "longitude": "110.984600"
+    "latitude": "-8.2420553",
+    "longitude": "110.9816182"
   },
   {
     "nama": "Pantai Pedenombo",
@@ -194,8 +194,8 @@
     "linkGmaps": "https://www.google.com/maps/search/?api=1&query=Pantai+Peden+Ombo+Pacitan",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Pantai+Peden+Ombo+Pacitan&tbm=isch",
-    "latitude": "-8.241000",
-    "longitude": "110.986200"
+    "latitude": "-8.2420695",
+    "longitude": "110.9816613"
   },
   {
     "nama": "Pantai Langitan Wetan",
@@ -212,11 +212,11 @@
     "linkGmaps": "https://share.google/R685WTg6vAgyKcXPl",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Pantai+Langitan+Wetan+Pacitan&tbm=isch",
-    "latitude": "-8.230100",
-    "longitude": "110.970500"
+    "latitude": "-8.2361449",
+    "longitude": "110.964682"
   },
   {
-    "nama": "Pantai Sirahtowo (Pantai Nami)",
+    "nama": "Pantai Sirahtowo (Pantai Ngaliyan)",
     "kategori": "Pantai",
     "pengelola": "",
     "alamat": "",
@@ -230,11 +230,11 @@
     "linkGmaps": "https://www.google.com/maps/search/?api=1&query=Pantai+Nami+Sirahtowo+Pacitan",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Pantai+Sirahtowo+Pacitan&tbm=isch",
-    "latitude": "-8.243500",
-    "longitude": "110.977100"
+    "latitude": "-8.2388291",
+    "longitude": "110.9738548"
   },
   {
-    "nama": "Pantai Karung (Pantai Ngaliyan)",
+    "nama": "Pantai Karung",
     "kategori": "Pantai",
     "pengelola": "pemda",
     "alamat": "Ketro, Watukarung, Pringkuku",
@@ -248,7 +248,7 @@
     "linkGmaps": "https://maps.app.goo.gl/1XNBcw9SZYew7Wfz6",
     "instagram": "",
     "linkFoto": "https://www.google.com/search?q=Pantai+Karung+Ngaliyan+Pacitan&tbm=isch",
-    "latitude": "-8.246100",
-    "longitude": "110.978500"
+    "latitude": "-8.23677",
+    "longitude": "110.9749453"
   }
 ]

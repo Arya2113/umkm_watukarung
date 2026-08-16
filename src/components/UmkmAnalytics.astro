@@ -3,139 +3,232 @@
  * UmkmAnalytics.astro — Visualisasi UMKM Analytics
  * Data diambil langsung dari src/data/*.json
  */
-import kuliner from '../data/kuliner.json';
-import akomodasi from '../data/akomodasi.json';
-import destinasi from '../data/destinasi.json';
-import jasa from '../data/jasa.json';
-import penunjang from '../data/penunjang.json';
+import kuliner from "../data/kuliner.json";
+import akomodasi from "../data/akomodasi.json";
+import destinasi from "../data/destinasi.json";
+import jasa from "../data/jasa.json";
+import penunjang from "../data/penunjang.json";
 
 // --- Distribusi Kategori (per file / big category) ---
-const total = kuliner.length + akomodasi.length + destinasi.length + jasa.length + penunjang.length;
+const total =
+  kuliner.length +
+  akomodasi.length +
+  destinasi.length +
+  jasa.length +
+  penunjang.length;
 const distribusi = [
-  { label: 'Kuliner & UMKM',   value: kuliner.length,   color: '#0E4F4C', pct: Math.round((kuliner.length / total) * 100) },
-  { label: 'Akomodasi',        value: akomodasi.length, color: '#2D6A4F', pct: Math.round((akomodasi.length / total) * 100) },
-  { label: 'Destinasi Wisata', value: destinasi.length, color: '#0D9488', pct: Math.round((destinasi.length / total) * 100) },
-  { label: 'Jasa Wisata',      value: jasa.length,      color: '#F59E0B', pct: Math.round((jasa.length / total) * 100) },
-  { label: 'Penunjang',        value: penunjang.length, color: '#64748B', pct: Math.round((penunjang.length / total) * 100) },
+  {
+    label: "Kuliner & UMKM",
+    value: kuliner.length,
+    color: "#0E4F4C",
+    pct: Math.round((kuliner.length / total) * 100),
+  },
+  {
+    label: "Akomodasi",
+    value: akomodasi.length,
+    color: "#2D6A4F",
+    pct: Math.round((akomodasi.length / total) * 100),
+  },
+  {
+    label: "Destinasi Wisata",
+    value: destinasi.length,
+    color: "#0D9488",
+    pct: Math.round((destinasi.length / total) * 100),
+  },
+  {
+    label: "Jasa Wisata",
+    value: jasa.length,
+    color: "#F59E0B",
+    pct: Math.round((jasa.length / total) * 100),
+  },
+  {
+    label: "Penunjang",
+    value: penunjang.length,
+    color: "#64748B",
+    pct: Math.round((penunjang.length / total) * 100),
+  },
 ];
-const maxVal = Math.max(...distribusi.map(d => d.value));
+const maxVal = Math.max(...distribusi.map((d) => d.value));
 
 // --- Donut Chart: SVG circumference = 2πr ≈ 238.76 (r=38) ---
 const CIRC = 238.76;
 let cumOffset = 0;
-const donutSegments = distribusi.map(d => {
+const donutSegments = distribusi.map((d) => {
   const dash = ((d.value / total) * CIRC).toFixed(2);
-  const offset = -(cumOffset);
+  const offset = -cumOffset;
   cumOffset += parseFloat(dash);
-  return { ...d, dash: `${dash} ${(CIRC - parseFloat(dash)).toFixed(2)}`, offset: offset.toFixed(2) };
+  return {
+    ...d,
+    dash: `${dash} ${(CIRC - parseFloat(dash)).toFixed(2)}`,
+    offset: offset.toFixed(2),
+  };
 });
 
 // Histogram Rating — based on kuliner sub-category counts as proxy
 const kulinerKats: Record<string, number> = {};
 kuliner.forEach((item: any) => {
-  const c = item.kategori || 'Lainnya';
+  const c = item.kategori || "Lainnya";
   kulinerKats[c] = (kulinerKats[c] || 0) + 1;
 });
 
-const warungMakan = kulinerKats['Warung Makan'] || 0;
-const restoran    = kulinerKats['Restoran'] || 0;
-const cafe        = kulinerKats['Cafe'] || 0;
-const umkmRumahan = (kulinerKats['UMKM Rumahan'] || 0) + (kulinerKats['UMKM Lainnya'] || 0);
-const kerajinanOleh = (kulinerKats['Kerajinan'] || 0) + (kulinerKats['Oleh-oleh'] || 0);
+const warungMakan = kulinerKats["Warung Makan"] || 0;
+const restoran = kulinerKats["Restoran"] || 0;
+const cafe = kulinerKats["Cafe"] || 0;
+const umkmRumahan =
+  (kulinerKats["UMKM Rumahan"] || 0) + (kulinerKats["UMKM Lainnya"] || 0);
+const kerajinanOleh =
+  (kulinerKats["Kerajinan"] || 0) + (kulinerKats["Oleh-oleh"] || 0);
 const totalKuliner = kuliner.length;
 
 const ratingHist = [
-  { star: 5, count: warungMakan + restoran, pct: Math.round(((warungMakan + restoran) / totalKuliner) * 100) },
+  {
+    star: 5,
+    count: warungMakan + restoran,
+    pct: Math.round(((warungMakan + restoran) / totalKuliner) * 100),
+  },
   { star: 4, count: cafe, pct: Math.round((cafe / totalKuliner) * 100) },
-  { star: 3, count: umkmRumahan, pct: Math.round((umkmRumahan / totalKuliner) * 100) },
-  { star: 2, count: kerajinanOleh, pct: Math.round((kerajinanOleh / totalKuliner) * 100) },
+  {
+    star: 3,
+    count: umkmRumahan,
+    pct: Math.round((umkmRumahan / totalKuliner) * 100),
+  },
+  {
+    star: 2,
+    count: kerajinanOleh,
+    pct: Math.round((kerajinanOleh / totalKuliner) * 100),
+  },
   { star: 1, count: 0, pct: 0 },
 ];
 const sumPct = ratingHist.slice(0, 4).reduce((s, r) => s + r.pct, 0);
 ratingHist[4].pct = Math.max(0, 100 - sumPct);
-ratingHist[4].count = totalKuliner - ratingHist.slice(0, 4).reduce((s, r) => s + r.count, 0);
+ratingHist[4].count =
+  totalKuliner - ratingHist.slice(0, 4).reduce((s, r) => s + r.count, 0);
 ---
 
 <section class="mb-10">
   <!-- Header -->
   <div class="fade-in mb-5">
     <h2 class="text-[26px] font-bold text-primary mb-0.5">UMKM Analytics</h2>
-    <p class="text-sm text-text-secondary">Insights and performance metrics for local businesses.</p>
+    <p class="text-sm text-text-secondary">
+      Insights and performance metrics for local businesses.
+    </p>
   </div>
 
   <!-- 3-column grid -->
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
     <!-- Card 1: Distribusi Kategori -->
-    <div class="fade-in bg-surface rounded-card border border-border shadow-card p-6 flex flex-col">
-      <h3 class="text-[17px] font-bold text-text-primary mb-5">Distribusi Kategori</h3>
+    <div
+      class="fade-in bg-surface rounded-card border border-border shadow-card p-6 flex flex-col"
+    >
+      <h3 class="text-[17px] font-bold text-text-primary mb-5">
+        Distribusi Kategori
+      </h3>
       <div class="flex flex-col gap-4">
-        {distribusi.map((item) => (
-          <div class="flex flex-col gap-1.5">
-            <div class="flex justify-between text-[13px] font-semibold text-text-primary">
-              <span>{item.label}</span>
-              <span class="font-bold">{item.value}</span>
+        {
+          distribusi.map((item) => (
+            <div class="flex flex-col gap-1.5">
+              <div class="flex justify-between text-[13px] font-semibold text-text-primary">
+                <span>{item.label}</span>
+                <span class="font-bold">{item.value}</span>
+              </div>
+              <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  class="h-full rounded-full transition-all duration-[600ms]"
+                  style={`width: ${Math.round((item.value / maxVal) * 100)}%; background: ${item.color};`}
+                />
+              </div>
             </div>
-            <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-              <div
-                class="h-full rounded-full transition-all duration-[600ms]"
-                style={`width: ${Math.round((item.value / maxVal) * 100)}%; background: ${item.color};`}
-              ></div>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
 
     <!-- Card 2: Donut Chart -->
-    <div class="fade-in bg-surface rounded-card border border-border shadow-card p-6 flex flex-col items-center">
-      <h3 class="text-[17px] font-bold text-text-primary mb-5 w-full">Persentase Kategori</h3>
+    <div
+      class="fade-in bg-surface rounded-card border border-border shadow-card p-6 flex flex-col items-center"
+    >
+      <h3 class="text-[17px] font-bold text-text-primary mb-5 w-full">
+        Persentase Kategori
+      </h3>
 
       <!-- Donut SVG -->
       <div class="relative w-[150px] h-[150px] my-2 mb-5">
-        <svg class="w-full h-full" style="transform: rotate(-90deg);" viewBox="0 0 100 100">
-          {donutSegments.map((seg) => (
-            <circle
-              cx="50" cy="50" r="38"
-              fill="transparent"
-              stroke={seg.color}
-              stroke-width="12"
-              stroke-dasharray={seg.dash}
-              stroke-dashoffset={seg.offset}
-            />
-          ))}
+        <svg
+          class="w-full h-full"
+          style="transform: rotate(-90deg);"
+          viewBox="0 0 100 100"
+        >
+          {
+            donutSegments.map((seg) => (
+              <circle
+                cx="50"
+                cy="50"
+                r="38"
+                fill="transparent"
+                stroke={seg.color}
+                stroke-width="12"
+                stroke-dasharray={seg.dash}
+                stroke-dashoffset={seg.offset}
+              />
+            ))
+          }
         </svg>
         <div class="absolute inset-0 flex flex-col items-center justify-center">
-          <span class="text-[26px] font-extrabold text-text-primary leading-none">{total}</span>
-          <span class="text-[12px] font-semibold text-text-secondary">Total</span>
+          <span
+            class="text-[26px] font-extrabold text-text-primary leading-none"
+            >{total}</span
+          >
+          <span class="text-[12px] font-semibold text-text-secondary"
+            >Total</span
+          >
         </div>
       </div>
 
       <!-- Legend -->
-      <div class="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[11px] font-semibold text-text-secondary w-full">
-        {distribusi.map((item) => (
-          <div class="flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full inline-block flex-shrink-0" style={`background: ${item.color};`}></span>
-            {item.label}
-          </div>
-        ))}
+      <div
+        class="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[11px] font-semibold text-text-secondary w-full"
+      >
+        {
+          distribusi.map((item) => (
+            <div class="flex items-center gap-1.5">
+              <span
+                class="w-2 h-2 rounded-full inline-block flex-shrink-0"
+                style={`background: ${item.color};`}
+              />
+              {item.label}
+            </div>
+          ))
+        }
       </div>
     </div>
 
     <!-- Card 3: Histogram Rating -->
-    <div class="fade-in bg-surface rounded-card border border-border shadow-card p-6 flex flex-col">
-      <h3 class="text-[17px] font-bold text-text-primary mb-5">Distribusi Sub-Kategori Kuliner</h3>
+    <div
+      class="fade-in bg-surface rounded-card border border-border shadow-card p-6 flex flex-col"
+    >
+      <h3 class="text-[17px] font-bold text-text-primary mb-5">
+        Distribusi Sub-Kategori Kuliner
+      </h3>
       <div class="flex flex-col gap-3.5">
-        {ratingHist.map((row) => (
-          <div class="flex items-center gap-3 text-[13px]">
-            <span class="w-8 font-bold text-text-primary flex-shrink-0">{row.star} ★</span>
-            <div class="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
-              <div class="h-full bg-primary rounded-full" style={`width: ${Math.max(row.pct, 1)}%;`}></div>
+        {
+          ratingHist.map((row) => (
+            <div class="flex items-center gap-3 text-[13px]">
+              <span class="w-8 font-bold text-text-primary flex-shrink-0">
+                {row.star} ★
+              </span>
+              <div class="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  class="h-full bg-primary rounded-full"
+                  style={`width: ${Math.max(row.pct, 1)}%;`}
+                />
+              </div>
+              <span class="w-9 text-right font-semibold text-text-secondary text-[12px] flex-shrink-0">
+                {row.pct}%
+              </span>
             </div>
-            <span class="w-9 text-right font-semibold text-text-secondary text-[12px] flex-shrink-0">{row.pct}%</span>
-          </div>
-        ))}
+          ))
+        }
       </div>
-      <p class="text-[11px] text-text-muted mt-4 leading-relaxed">★5=Warung+Resto, ★4=Cafe, ★3=UMKM Rumahan, ★2=Kerajinan/Oleh-oleh</p>
     </div>
   </div>
 </section>
